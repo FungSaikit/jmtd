@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<title>佐为照明</title>
+		<title>金明同达灯饰</title>
 		
 		<!-- mobile_desktop icon -->
 		<link rel="app-touch-icon" href="<%=path %>/resources/index/image/79灯Logo.jpg" />

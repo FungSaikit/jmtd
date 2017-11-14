@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>繁灯网后台</title>
+    <title>金明同达灯饰后台</title>
     <style>
 #container {
 	width:960px;

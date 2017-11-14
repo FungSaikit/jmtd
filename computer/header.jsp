@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-		<title>您好，欢迎使用79deng.com访问79灯网！- 79灯网</title>
+		<title>您好，欢迎使用金明同达灯饰在线商城！- 金明同达灯饰</title>
 		<meta name="renderer" content="webkit">
 		<link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/resources/computer/css/font-awesome-ie7.min.css" />
 		<link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/resources/computer/css/font-awesome.min.css" />

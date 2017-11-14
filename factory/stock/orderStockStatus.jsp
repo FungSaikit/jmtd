@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.1, maximum-scale=2.0, user-scalable=yes" />
-    <title>繁灯网供应商管理系统</title>
+    <title>金明同达灯饰供应商管理系统</title>
     <link rel="icon" type="image/x-icon" href="${path}/resources/backStage/image/favicon.ico" />
 
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/common/bootstrap.min.css" />

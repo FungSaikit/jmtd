@@ -11,7 +11,7 @@
 %>  
 <html>  
 <head>  
-    <title>WebSocket 聊天室</title>  
+    <title>金明同达灯饰 聊天室</title>
     <!-- 引入CSS文件 -->  
       
     <!-- 映入Ext的JS开发包，及自己实现的webscoket. -->  

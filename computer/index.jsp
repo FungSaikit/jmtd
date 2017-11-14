@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-		<title>佐为照明</title>
+		<title>金明同达灯饰</title>
 		<meta name="renderer" content="webkit">
 		<meta name="description" content="去旧灯网是一个专门为灯具经销商、设计师、地产公司和装饰公司而建立的网站平台，致力于为经销商提供清库存、产品展示等服务。以共享经济和行业社交本地化的模式，共享全国灯具经销商的库存，以存会友，随时随地发现身边的同行，开展业务交流与合作。">
 		<meta name="keywords" content="去旧灯网，处理库存灯，库存灯，去旧，去旧灯，灯，灯饰，共享经济，买灯，卖灯，同泰，陕西，西安">

@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
-    <title>东方百泰</title>
+    <title>金明同达灯饰</title>
     <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/customer/assets/css/topbar_orange.css">
 
     <style type="text/css">

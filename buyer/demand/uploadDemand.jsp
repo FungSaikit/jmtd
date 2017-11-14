@@ -8,7 +8,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
 
-		<title>佐为照明</title>
+		<title>金明同达灯饰</title>
 
 		<!-- mobile_desktop icon --><%-- 
 		<link rel="app-touch-icon" href="../image/79灯Logo.jpg" />

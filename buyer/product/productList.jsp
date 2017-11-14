@@ -8,7 +8,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>佐为照明</title>
+    <title>金明同达灯饰</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/customer/assets/css/fung.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/customer/assets/css/addtocart.css">
     <script type="text/javascript" src="<%=request.getContextPath()%>/resources/customer/assets/js/vue.js"></script>
@@ -94,8 +94,8 @@
         }
 
         .menuselection_selected {
-            border-bottom-color: #f38200;
-            color: #f38200;
+            border-bottom-color: #29a2f5;
+            color: #29a2f5;
         }
 
         .dir {
@@ -126,7 +126,9 @@
         }
 
         .hotsaletitle {
-            font-size: 0.8rem;
+            font-size: 1rem;
+            height: 2.8rem;
+            line-height: 1.4rem;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -203,7 +205,7 @@
 
         .leftoption_selected {
             background-color: #f2f2f2;
-            border-left-color: #f38200;
+            border-left-color: #29a2f5;
         }
 
         .selectedAll {
@@ -247,8 +249,8 @@
         }
 
         .rightoption_selected {
-            color: #f38200;
-            border-color: #f38200;
+            color: #29a2f5;
+            border-color: #29a2f5;
         }
 
         .img_div {
@@ -762,7 +764,7 @@
             <button class="bottom_button" onclick="clearAll()">重置</button>
             <button class="bottom_button" onclick="backToList()">取消</button>
             <button class="bottom_button" onclick="searchProduct()"
-                    style="background-color: #f38200; color: white; border-color: #f38200; width: 40%;">
+                    style="background-color: #29a2f5; color: white; border-color: #29a2f5; width: 40%;">
                 确定
             </button>
         </div>

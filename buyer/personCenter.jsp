@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>佐为照明</title>
+    <title>金明同达灯饰</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/customer/assets/css/fung.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/customer/assets/css/m_menu.css">
     <style type="text/css">
@@ -20,7 +20,7 @@
         .blocktitle {
             text-align: left;
             font-size: 1.2rem;
-            color: #f07a00;
+            color: #29a2f5;
             padding: 0.3rem;
             vertical-align: middle;
             margin-bottom: 0;
@@ -57,7 +57,7 @@
         .corner_number {
             display: none;
             font-size: 0.8rem;
-            background-color: red;
+            background-color: #29a2f5;
             color: #fff;
             border: 1px #fff solid;
             height: 1rem;
@@ -75,7 +75,7 @@
         }
 
         .bgc_orange {
-            background-color: #eb9c01;
+            background-color: #29a2f5;
         }
 
     </style>
@@ -104,8 +104,8 @@
 
     <img class="background" src="<%=request.getContextPath()%>/resources/customer/assets/images/personal_center/pc_bg.jpg">
 
-    <div class="navibar">
-        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/back_white.png" alt="" class="topbar_button prevPage">
+    <div class="navibar" style="background: none;">
+        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/back_white.png" class="topbar_button prevPage">
         <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/setting_white.png" style="float: right;" class="topbar_button"
              onclick="showPersonalSetting()">
     </div>

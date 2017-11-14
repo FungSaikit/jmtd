@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimum-scale=1,maximum-scale=1">
    	<meta name="format-detection" content="telephone=no" />
-    <title>佐为照明</title>
+    <title>金明同达灯饰</title>
     <link href="<%=request.getContextPath() %>/resources/common/weui.min.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/common/dropload.css" rel="stylesheet">
     <link href="<%=request.getContextPath() %>/resources/customer/assets/css/product.css?11xxx1xcbacq" rel="stylesheet">

@@ -1,8 +1,8 @@
-<%@ page language="java" import="java.util.*,com.alphaking.constant.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> 
+<%@ page language="java" import="java.util.*,com.alphaking.constant.*" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<%@ taglib prefix="thumbnail" uri="/WEB-INF/tld/thumbnailTag.tld"%>
+<%@ taglib prefix="thumbnail" uri="/WEB-INF/tld/thumbnailTag.tld" %>
 
 <!DOCTYPE html>
 <html lang="zh">
@@ -10,7 +10,7 @@
     <meta name="viewport"
           content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta charset="UTF-8">
-    <title>佐为照明</title>
+    <title>金明同达灯饰</title>
     <script type="text/javascript" src="<%=request.getContextPath()%>/resources/customer/assets/js/vue.js"></script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/resources/common/swiper-3.4.2.min.js"></script>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/customer/assets/css/fung.css">
@@ -59,8 +59,8 @@
         }
 
         .topbaroption_selected {
-            color: #f28f29;
-            border-bottom-color: #f28f29;
+            color: #29a2f5;
+            border-bottom-color: #29a2f5;
         }
 
         .swiper-container {
@@ -81,10 +81,6 @@
             width: 100%;
             height: 100%;
             vertical-align: middle;
-        }
-
-        .swiper-pagination-bullet-active {
-            background-color: #f38200;
         }
 
         .detailsbox {
@@ -151,7 +147,6 @@
         }
 
         .uppull span {
-
             vertical-align: middle;
         }
 
@@ -187,13 +182,13 @@
         .addtocartbutton {
             width: 35%;
             color: #fff;
-            background-color: #f28f29;
+            background-color: gray;
         }
 
         .buynow {
             width: 35%;
             color: #fff;
-            background-color: #f55e0b;
+            background-color: #29a2f5;
         }
 
         .addtocart {
@@ -255,7 +250,7 @@
         }
 
         .a2c_price {
-            color: #f55e0d;
+            color: #f38200;
             height: 2rem;
             line-height: 2rem;
         }
@@ -299,11 +294,14 @@
             font-size: 0.8rem;
             color: #444;
             border: 1px #f3f3f3 solid;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .option_selected {
-            border: 1px #f0810e solid;
-            color: #f38200;
+            border: 1px #29a2f5 solid;
+            color: #29a2f5;
             background-color: #fff;
         }
 
@@ -384,13 +382,15 @@
 <body>
 
 <div class="header" id="topbar">
-    <img src="<%=request.getContextPath()%>/resources/customer/assets/images/details/back.png" alt="返回" onclick="history.go(-1)">
+    <img src="<%=request.getContextPath()%>/resources/customer/assets/images/details/back.png" alt="返回"
+         onclick="history.go(-1)">
     <div class="mid_button">
         <div class="topbaroption" :class="{topbaroption_selected: selected[0]}" @click="selectThis(0)">商品</div>
         <div class="topbaroption" :class="{topbaroption_selected: selected[1]}" @click="selectThis(1)">参数</div>
         <div class="topbaroption" :class="{topbaroption_selected: selected[2]}" @click="selectThis(2)">详情</div>
     </div>
-    <img onclick="window.location.href='<%=request.getContextPath()%>/shopcart/myShopcart'" src="<%=request.getContextPath()%>/resources/customer/assets/images/details/cart.png" alt="购物车">
+    <img onclick="window.location.href='<%=request.getContextPath()%>/shopcart/myShopcart'"
+         src="<%=request.getContextPath()%>/resources/customer/assets/images/details/cart.png" alt="购物车">
 </div>
 
 <div class="placeholder" id="jumppage1"></div>
@@ -398,30 +398,30 @@
 <div class="block" id="page1" style="padding-bottom: 0.5rem;">
     <div class="swiper-container" id="swiperbox">
         <div class="swiper-wrapper">
-        	<c:if test="${!empty product.product.cover1 }">
-            <a class="swiper-slide" href="#">
-                <img class="swiper_img" src="${product.product.cover1 }">
-            </a>
+            <c:if test="${!empty product.product.cover1 }">
+                <a class="swiper-slide" href="#">
+                    <img class="swiper_img" src="${product.product.cover1 }">
+                </a>
             </c:if>
             <c:if test="${!empty product.product.cover2 }">
-            <a class="swiper-slide" href="#">
-                <img class="swiper_img" src="${product.product.cover2}">
-            </a>
+                <a class="swiper-slide" href="#">
+                    <img class="swiper_img" src="${product.product.cover2}">
+                </a>
             </c:if>
             <c:if test="${!empty product.product.cover3 }">
-            <a class="swiper-slide" href="#">
-                <img class="swiper_img" src="${product.product.cover3}">
-            </a>
+                <a class="swiper-slide" href="#">
+                    <img class="swiper_img" src="${product.product.cover3}">
+                </a>
             </c:if>
             <c:if test="${!empty product.product.cover4 }">
-            <a class="swiper-slide" href="#">
-                <img class="swiper_img" src="${product.product.cover4}">
-            </a>
+                <a class="swiper-slide" href="#">
+                    <img class="swiper_img" src="${product.product.cover4}">
+                </a>
             </c:if>
             <c:if test="${!empty product.product.cover5 }">
-            <a class="swiper-slide" href="#">
-                <img class="swiper_img" src="${product.product.cover5}">
-            </a>
+                <a class="swiper-slide" href="#">
+                    <img class="swiper_img" src="${product.product.cover5}">
+                </a>
             </c:if>
         </div>
         <div class="swiper-pagination"></div>
@@ -429,12 +429,18 @@
     <div class="detailsbox">
         <div class="title" id="productName">${product.product.productName }</div>
         <div class="details productPower">功率:${product.product.productPower }</div>
-        <div class="price_nso">¥ <span class="productPrice">${product.product.retailPrice }</span> <span style="float: right; font-size: 0.8rem; color: gray;" class="productSales">销量：${product.product.productSales }</span></div>
+        <div class="price_nso">¥ <span class="productPrice">${product.product.retailPrice }</span> <span
+                style="float: right; font-size: 0.8rem; color: gray;"
+                class="productSales">销量：${product.product.productSales }</span></div>
         <div class="modelselect">
             <div>
                 产品规格：
                 <div id="seeprice" style="float: right;" onclick="seePrice()">+</div>
-                <div id="hiddenprice" style="float: right; color: #f38200; font-size: 0.8rem" onclick="hidePrice()" hidden><del style="color: #000;">原价:9999.9</del> 活动价:9999.0</div>
+                <div id="hiddenprice" style="float: right; color: #f38200; font-size: 0.8rem" onclick="hidePrice()"
+                     hidden>
+                    <del style="color: #000;">原价:9999.9</del>
+                    活动价:9999.0
+                </div>
             </div>
             <div class="option option_selected">型号1</div>
             <div class="option">型号2</div>
@@ -446,14 +452,17 @@
     var body = document.getElementsByTagName('body')[0];
     var seePriceButton = document.getElementById("seeprice");
     var hiddenPriceButton = document.getElementById("hiddenprice");
+
     function seePrice() {
         seePriceButton.hidden = true;
         hiddenPriceButton.hidden = false;
     }
+
     function hidePrice() {
         hiddenPriceButton.hidden = true;
         seePriceButton.hidden = false;
     }
+
     var winHeight, winWidth;
     if (window.innerHeight) winHeight = window.innerHeight;
     else if ((document.body) && (document.body.clientHeight)) winHeight = document.body.clientHeight;
@@ -510,7 +519,8 @@
 </script>
 
 <div class="uppull" id="jumppage2">
-    <img class="pull_img" src="<%=request.getContextPath()%>/resources/customer/assets/images/details/pull.png" alt=""> <span>上拉查看产品参数</span>
+    <img class="pull_img" src="<%=request.getContextPath()%>/resources/customer/assets/images/details/pull.png" alt="">
+    <span>上拉查看产品参数</span>
 </div>
 
 <div class="block" id="page2">
@@ -518,17 +528,25 @@
     <table class="detailstable" id="detailstable">
         <tr>
             <th class="detailstitle">产品规格：</th>
-            <td id="productSize"><c:if test="${!empty product.product.productLength }"><fmt:formatNumber value=" ${product.product.productLength }" pattern="#0"/>*</c:if>
-													<c:if test="${!empty product.product.productWidth }"><fmt:formatNumber value=" ${product.product.productWidth }" pattern="#0"/>*</c:if>	
-													<c:if test="${!empty product.product.productHeight }"><fmt:formatNumber value="${product.product.productHeight }" pattern="#0"/><c:if test="${!empty product.product.productDiameter }">*</c:if></c:if>
-													<c:if test="${!empty product.product.productDiameter }"><fmt:formatNumber value=" ${product.product.productDiameter}" pattern="#0"/></c:if> </td>
+            <td id="productSize"><c:if test="${!empty product.product.productLength }"><fmt:formatNumber
+                    value=" ${product.product.productLength }" pattern="#0"/>*</c:if>
+                <c:if test="${!empty product.product.productWidth }"><fmt:formatNumber
+                        value=" ${product.product.productWidth }" pattern="#0"/>*</c:if>
+                <c:if test="${!empty product.product.productHeight }"><fmt:formatNumber
+                        value="${product.product.productHeight }" pattern="#0"/><c:if
+                        test="${!empty product.product.productDiameter }">*</c:if></c:if>
+                <c:if test="${!empty product.product.productDiameter }"><fmt:formatNumber
+                        value=" ${product.product.productDiameter}" pattern="#0"/></c:if></td>
         </tr>
         <tr>
             <th class="detailstitle">包装规格：</th>
-            <td id="packageSize"><c:if test="${!empty product.product.packageLength }"><fmt:formatNumber  value="${product.product.packageLength }" pattern="#0"/>*</c:if>
-													<c:if test="${!empty product.product.packageWidth }"><fmt:formatNumber value="${product.product.packageWidth }" pattern="#0"/>*</c:if>
-													<c:if test="${!empty product.product.packageHeight }"><fmt:formatNumber value=" ${product.product.packageHeight }" pattern="#0"/>cm</c:if>
-			</td>
+            <td id="packageSize"><c:if test="${!empty product.product.packageLength }"><fmt:formatNumber
+                    value="${product.product.packageLength }" pattern="#0"/>*</c:if>
+                <c:if test="${!empty product.product.packageWidth }"><fmt:formatNumber
+                        value="${product.product.packageWidth }" pattern="#0"/>*</c:if>
+                <c:if test="${!empty product.product.packageHeight }"><fmt:formatNumber
+                        value=" ${product.product.packageHeight }" pattern="#0"/>cm</c:if>
+            </td>
         </tr>
         <tr>
             <th class="detailstitle">适用空间：</th>
@@ -554,32 +572,53 @@
 </div>
 
 <div class="uppull" id="jumppage3">
-    <img class="pull_img" src="<%=request.getContextPath()%>/resources/customer/assets/images/details/pull.png" alt=""> <span>上拉查看图文详情</span>
+    <img class="pull_img" src="<%=request.getContextPath()%>/resources/customer/assets/images/details/pull.png" alt="">
+    <span>上拉查看图文详情</span>
 </div>
 
 <div class="block" id="page3">
     <h1 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px lightgray solid;">图文详情</h1>
     <div style="font-size: 0;">
-        <c:if test="${!empty product.product.descriptionPic1 }"><img src="${product.product.descriptionPic1 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic2 }"><img src="${product.product.descriptionPic2 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic3 }"><img src="${product.product.descriptionPic3 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic4 }"><img src="${product.product.descriptionPic4 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic5 }"><img src="${product.product.descriptionPic5 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic6 }"><img src="${product.product.descriptionPic6 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic7 }"><img src="${product.product.descriptionPic7 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic8 }"><img src="${product.product.descriptionPic8 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic9 }"><img src="${product.product.descriptionPic9 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic10 }"><img src="${product.product.descriptionPic10 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic11 }"><img src="${product.product.descriptionPic11 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic12 }"><img src="${product.product.descriptionPic12 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic13 }"><img src="${product.product.descriptionPic13 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic14 }"><img src="${product.product.descriptionPic14 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic15 }"><img src="${product.product.descriptionPic15 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic16 }"><img src="${product.product.descriptionPic16 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic17 }"><img src="${product.product.descriptionPic17 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic18 }"><img src="${product.product.descriptionPic18 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic19 }"><img src="${product.product.descriptionPic19 }" style="width:100%;height:100%;"/></c:if>
-        <c:if test="${!empty product.product.descriptionPic20 }"><img src="${product.product.descriptionPic20 }" style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic1 }"><img src="${product.product.descriptionPic1 }"
+                                                                     style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic2 }"><img src="${product.product.descriptionPic2 }"
+                                                                     style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic3 }"><img src="${product.product.descriptionPic3 }"
+                                                                     style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic4 }"><img src="${product.product.descriptionPic4 }"
+                                                                     style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic5 }"><img src="${product.product.descriptionPic5 }"
+                                                                     style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic6 }"><img src="${product.product.descriptionPic6 }"
+                                                                     style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic7 }"><img src="${product.product.descriptionPic7 }"
+                                                                     style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic8 }"><img src="${product.product.descriptionPic8 }"
+                                                                     style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic9 }"><img src="${product.product.descriptionPic9 }"
+                                                                     style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic10 }"><img src="${product.product.descriptionPic10 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic11 }"><img src="${product.product.descriptionPic11 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic12 }"><img src="${product.product.descriptionPic12 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic13 }"><img src="${product.product.descriptionPic13 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic14 }"><img src="${product.product.descriptionPic14 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic15 }"><img src="${product.product.descriptionPic15 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic16 }"><img src="${product.product.descriptionPic16 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic17 }"><img src="${product.product.descriptionPic17 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic18 }"><img src="${product.product.descriptionPic18 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic19 }"><img src="${product.product.descriptionPic19 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
+        <c:if test="${!empty product.product.descriptionPic20 }"><img src="${product.product.descriptionPic20 }"
+                                                                      style="width:100%;height:100%;"/></c:if>
     </div>
 </div>
 
@@ -645,7 +684,8 @@
     <div style="height: 15%"></div>
     <div class="a2c_details">
         <span class="waiting_span">正在加载……</span>
-        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/cart/close.png" alt="关闭" class="closecart" onclick="closeCart()">
+        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/cart/close.png" alt="关闭"
+             class="closecart" onclick="closeCart()">
     </div>
 </div>
 
@@ -671,7 +711,7 @@
                 <div class="option_title">{{selection.title}}</div>
                 <div class="option" v-for="(opt,index2) in selection.option"
                      :class="{option_selected: opt.option_selected}" :data-id="opt.id"
-                     @click="selectOption(index1, index2)" >{{opt.name}}
+                     @click="selectOption(index1, index2)">{{opt.name}}
                 </div>
             </div>
             <div class="placeholder"></div>
@@ -689,7 +729,8 @@
             </table>
             <div class="a2c_right" id="add_n_buy" onclick="confirmToAdd()">加入购物车</div>
         </div>
-        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/cart/close.png" alt="关闭" class="closecart" onclick="closeCart()">
+        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/cart/close.png" alt="关闭"
+             class="closecart" onclick="closeCart()">
     </div>
 </div>
 
@@ -717,111 +758,112 @@
         /* ajax  请求产品数据 */
 
         /* setTimeout(function () { */
-            var box1 = document.getElementById('addtocart');
-            var box2 = document.getElementById('addtocart_waiting');
-            var addAndBuy = document.getElementById('add_n_buy');
-            box1.hidden = false;
-            box2.hidden = true;
-            if (func == 1) {
-                addAndBuy.innerHTML = "加入购物车";
-                addAndBuy.setAttribute('onclick', 'addMe()');
-            } else if (func == 2) {
-                addAndBuy.innerHTML = "立即购买";
-                addAndBuy.setAttribute('onclick', 'buyMe()');
-            }/* 
-        }, 1000); */
+        var box1 = document.getElementById('addtocart');
+        var box2 = document.getElementById('addtocart_waiting');
+        var addAndBuy = document.getElementById('add_n_buy');
+        box1.hidden = false;
+        box2.hidden = true;
+        if (func == 1) {
+            addAndBuy.innerHTML = "加入购物车";
+            addAndBuy.setAttribute('onclick', 'addMe()');
+        } else if (func == 2) {
+            addAndBuy.innerHTML = "立即购买";
+            addAndBuy.setAttribute('onclick', 'buyMe()');
+        }
+        /*
+                }, 1000); */
     }
-    
-    var productId = ${product.product.productId};
-    function changeProduct(productId){
-		var url="<%=request.getContextPath()%>/product/getProductAjax";
-		var params={productId:productId};
-		doAjax("GET",url,params,changeSuccess,fail,true,false);
-	}
-	
-	var percent="${percent}";
-	function changeSuccess(data){
-		var product = data.data;
-		swiper.removeAllSlides();
-		if(product.product.cover1!=null)
-			swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="'+product.product.cover1+'"></a>'); 
-		if(product.product.cover2!=null)
-			swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="'+product.product.cover2+'"></a>'); 
-		if(product.product.cover3!=null)
-			swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="'+product.product.cover3+'"></a>');  
-		if(product.product.cover4!=null)
-			swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="'+product.product.cover4+'"></a>');  
-		if(product.product.cover5!=null)
-			swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="'+product.product.cover5+'"></a>'); 
-		
-		if(percent!=""){
-			product.product.unitPrice=(product.product.unitPrice+Math.ceil(product.product.unitPrice*parseFloat(percent))).toFixed(2);
-		}
-		
-		addToCart.title=product.product.productName;
-		addToCart.model=product.product.productCode;
-		addToCart.price=product.product.retailPrice;
-		addToCart.saleNumber=product.product.productSales;
-		addToCart.picture=changePath(product.product.cover1);
-		
-		$("#productName").html(product.product.productName);
-		$(".productPower").html("功率:"+(product.product.productPower==null?'':product.product.productPower));
-		$(".productPrice").html(product.product.retailPrice);
-		$(".productSales").html("销量："+product.product.productSales);
-		$("#lightNumber").html(product.product.lightNumber);
-		$("#space").html(product.space);
-		$("#productColor").html(product.product.productColor);
-		//$("#productCode").html(product.product.productCode);
-		
-		
-		
-		var productSize="";
-		if(product.product.productLength!=null){
-			productSize+=""+product.product.productLength+"*";
-		}
-		if(product.product.productWidth!=null){
-			productSize+=""+product.product.productWidth+"*";
-		}
-		if(product.product.productHeight!=null){
-			productSize+=""+product.product.productHeight+((product.product.productDiameter!=null)?"*":"");
-		}
-		if(product.product.productDiameter!=null){
-			productSize+=""+product.product.productDiameter;
-		}
-		$("#productSize").html(productSize+"mm");
-		
-		$("#productWeight").html(product.product.productWeight);
-	
-		var packageSize="";
-		if(product.product.packageLength!=null){
-			packageSize+=""+product.product.packageLength+"*";
-		}	
-		if(product.product.packageWidth!=null){
-			packageSize+=""+product.product.packageWidth+"*";
-		}
-		if(product.product.packageHeight!=null){
-			packageSize+=""+product.product.packageHeight;
-		}
-		$("#packageSize").html(packageSize+"cm");
-		
-		$("#packageWeight").html(product.product.packageWeight);
-		
-		productId=product.product.productId;
 
-	}
-	
-	function fail(data){
-		cosole.log("fail");
-	}
-	
-	
-    
-	//更改图片路径，读取缩略图
-    function changePath(path){
-		var i=path.lastIndexOf("/");
-		return path.substring(0,i+1)+"thumbnailImage/"+path.substring(i+1);
-	}
-	
+    var productId = ${product.product.productId};
+
+    function changeProduct(productId) {
+        var url = "<%=request.getContextPath()%>/product/getProductAjax";
+        var params = {productId: productId};
+        doAjax("GET", url, params, changeSuccess, fail, true, false);
+    }
+
+    var percent = "${percent}";
+
+    function changeSuccess(data) {
+        var product = data.data;
+        swiper.removeAllSlides();
+        if (product.product.cover1 != null)
+            swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="' + product.product.cover1 + '"></a>');
+        if (product.product.cover2 != null)
+            swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="' + product.product.cover2 + '"></a>');
+        if (product.product.cover3 != null)
+            swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="' + product.product.cover3 + '"></a>');
+        if (product.product.cover4 != null)
+            swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="' + product.product.cover4 + '"></a>');
+        if (product.product.cover5 != null)
+            swiper.appendSlide('<a class="swiper-slide" href="#"><img class="swiper_img" src="' + product.product.cover5 + '"></a>');
+
+        if (percent != "") {
+            product.product.unitPrice = (product.product.unitPrice + Math.ceil(product.product.unitPrice * parseFloat(percent))).toFixed(2);
+        }
+
+        addToCart.title = product.product.productName;
+        addToCart.model = product.product.productCode;
+        addToCart.price = product.product.retailPrice;
+        addToCart.saleNumber = product.product.productSales;
+        addToCart.picture = changePath(product.product.cover1);
+
+        $("#productName").html(product.product.productName);
+        $(".productPower").html("功率:" + (product.product.productPower == null ? '' : product.product.productPower));
+        $(".productPrice").html(product.product.retailPrice);
+        $(".productSales").html("销量：" + product.product.productSales);
+        $("#lightNumber").html(product.product.lightNumber);
+        $("#space").html(product.space);
+        $("#productColor").html(product.product.productColor);
+        //$("#productCode").html(product.product.productCode);
+
+
+        var productSize = "";
+        if (product.product.productLength != null) {
+            productSize += "" + product.product.productLength + "*";
+        }
+        if (product.product.productWidth != null) {
+            productSize += "" + product.product.productWidth + "*";
+        }
+        if (product.product.productHeight != null) {
+            productSize += "" + product.product.productHeight + ((product.product.productDiameter != null) ? "*" : "");
+        }
+        if (product.product.productDiameter != null) {
+            productSize += "" + product.product.productDiameter;
+        }
+        $("#productSize").html(productSize + "mm");
+
+        $("#productWeight").html(product.product.productWeight);
+
+        var packageSize = "";
+        if (product.product.packageLength != null) {
+            packageSize += "" + product.product.packageLength + "*";
+        }
+        if (product.product.packageWidth != null) {
+            packageSize += "" + product.product.packageWidth + "*";
+        }
+        if (product.product.packageHeight != null) {
+            packageSize += "" + product.product.packageHeight;
+        }
+        $("#packageSize").html(packageSize + "cm");
+
+        $("#packageWeight").html(product.product.packageWeight);
+
+        productId = product.product.productId;
+
+    }
+
+    function fail(data) {
+        cosole.log("fail");
+    }
+
+
+    //更改图片路径，读取缩略图
+    function changePath(path) {
+        var i = path.lastIndexOf("/");
+        return path.substring(0, i + 1) + "thumbnailImage/" + path.substring(i + 1);
+    }
+
     var middleBox = document.getElementById('a2c_middle');
     middleBox.onscroll = function (e) {
         e.preventDefault()
@@ -856,7 +898,7 @@
         var numberInput = document.getElementById('number_input');
         numberInput.value = parseInt(numberInput.value) + 1;
     }
-    
+
     var addToCart = new Vue({
         el: "#addtocart",
         data: {
@@ -869,12 +911,12 @@
                 {
                     title: '型号',
                     option: [
-						<c:forEach items="${seriesList}" var="seriesProduct">
-                        	{
-                        		id:'${seriesProduct.productId}',
-                        		name: '${seriesProduct.productCode}', 
-                        		option_selected: ${seriesProduct.productId==product.product.productId}
-                        	},
+                        <c:forEach items="${seriesList}" var="seriesProduct">
+                        {
+                            id: '${seriesProduct.productId}',
+                            name: '${seriesProduct.productCode}',
+                            option_selected: ${seriesProduct.productId==product.product.productId}
+                        },
                         </c:forEach>
                     ]
                 }
@@ -890,7 +932,7 @@
             }
         }
     });
-    
+
     function buyMe() {
         /*直接购买产品*/
         buyImmediately();
@@ -899,63 +941,69 @@
 
     function addMe() {
         /*加入购物车*/
-    	addShopcart();
+        addShopcart();
     }
-    
-  //加入购物车
-    function addShopcart(){
-    	var url = "<%=request.getContextPath()%>/shopcart/addShopcart";
-		var params = {productId: productId,num:$("#number_input").val()};
-		doAjax("GET", url, params, addShopcartSuccess, 
-				function(data){console.log(data);console.log("加入购物车失败");}, true, false);
+
+    //加入购物车
+    function addShopcart() {
+        var url = "<%=request.getContextPath()%>/shopcart/addShopcart";
+        var params = {productId: productId, num: $("#number_input").val()};
+        doAjax("GET", url, params, addShopcartSuccess,
+            function (data) {
+                console.log(data);
+                console.log("加入购物车失败");
+            }, true, false);
     }
-    
+
     //加入购物车成功
-    function addShopcartSuccess(data){ 
+    function addShopcartSuccess(data) {
         alert("添加到购物车！");
         closeCart();
     }
-    
-    function buyImmediately(){
-		window.location.href='<%=request.getContextPath() %>/buyer/buyImmediately?productId='+productId+
-				'&num='+$("#number_input").val();
-	}
-	
+
+    function buyImmediately() {
+        window.location.href = '<%=request.getContextPath() %>/buyer/buyImmediately?productId=' + productId +
+            '&num=' + $("#number_input").val();
+    }
+
     function closeWindow() {
-		var url=location.href.split('#')[0].replace(/&/g,"-");
-  		var urlStr = "<%=request.getContextPath()%>/wechat/signature?url="+url;
-		//alert("Before Call:"+urlStr);
-		$.ajax({
-			method: "GET",
-			url: urlStr,
-			success:function(data,status,jqXHR){
-				//alert(data.appId+","+data.signature+","+data.timeStamp+","+data.nonceStr);
-				var result=data;
-				var appId=result.appId;
-				var signature = result.signature;
-				var timeStamp = result.timeStamp;
-			    var nonceStr = result.nonceStr;		 
-			    
-			    wx.config({
-			        debug: false,// 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-			        appId: appId, // 必填，公众号的唯一标识
-			        timestamp:timeStamp , // 必填，生成签名的时间戳
-			        nonceStr: nonceStr, // 必填，生成签名的随机串
-			        signature: signature,// 必填，签名，见附录1
-			        jsApiList: ['closeWindow'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-			    });
-			    wx.error(function(res){
-			           
-			    });
-			    wx.ready(function(){
-					url="<%=request.getContextPath()%>/buyer/sendWarnMessage";
-					var params={};
-					doAjax("GET",url,params,function(data){},function(data){console.log(fail);},true,false);
-					wx.closeWindow();
-			    });
-			}
-		}); // end ajax
-	}
+        var url = location.href.split('#')[0].replace(/&/g, "-");
+        var urlStr = "<%=request.getContextPath()%>/wechat/signature?url=" + url;
+        //alert("Before Call:"+urlStr);
+        $.ajax({
+            method: "GET",
+            url: urlStr,
+            success: function (data, status, jqXHR) {
+                //alert(data.appId+","+data.signature+","+data.timeStamp+","+data.nonceStr);
+                var result = data;
+                var appId = result.appId;
+                var signature = result.signature;
+                var timeStamp = result.timeStamp;
+                var nonceStr = result.nonceStr;
+
+                wx.config({
+                    debug: false,// 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                    appId: appId, // 必填，公众号的唯一标识
+                    timestamp: timeStamp, // 必填，生成签名的时间戳
+                    nonceStr: nonceStr, // 必填，生成签名的随机串
+                    signature: signature,// 必填，签名，见附录1
+                    jsApiList: ['closeWindow'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+                });
+                wx.error(function (res) {
+
+                });
+                wx.ready(function () {
+                    url = "<%=request.getContextPath()%>/buyer/sendWarnMessage";
+                    var params = {};
+                    doAjax("GET", url, params, function (data) {
+                    }, function (data) {
+                        console.log(fail);
+                    }, true, false);
+                    wx.closeWindow();
+                });
+            }
+        }); // end ajax
+    }
 </script>
 
 

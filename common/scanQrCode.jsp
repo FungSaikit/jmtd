@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>佐为照明</title>
+    <title>金明同达灯饰</title>
     
 	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
  	<script src="<%=request.getContextPath() %>/resources/common/zepto.min.js"></script>

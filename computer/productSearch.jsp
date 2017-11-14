@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes" />
-		<title>产品信息 - 79灯网</title>
+		<title>产品信息 - 金明同达灯饰</title>
 		<meta name="renderer" content="webkit">
 		<link rel="icon" href="<%=request.getContextPath() %>/resources/index/image/79icon.jpg" />
 		<link type="text/css" rel="stylesheet" href="<%=path %>/resources/computer/css/search.css">

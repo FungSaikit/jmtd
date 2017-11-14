@@ -10,7 +10,7 @@
     <meta name="viewport"
           content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta charset="UTF-8">
-    <title>佐为照明</title>
+    <title>金明同达灯饰</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/customer/assets/css/fung.css">
     <script type="text/javascript" src="<%=request.getContextPath()%>/resources/customer/assets/js/vue.js"></script>
     <style type="text/css">

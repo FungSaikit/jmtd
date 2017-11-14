@@ -9,7 +9,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>佐为照明</title>
+    <title>金明同达灯饰</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/customer/assets/css/fung.css">
     <style type="text/css">
 

@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>繁灯网供应商管理系统</title>
+    <title>金明同达灯饰供应商管理系统</title>
     <style>
 #container {
 	width:960px;

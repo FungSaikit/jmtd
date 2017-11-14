@@ -1,6 +1,6 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="thumbnail" uri="/WEB-INF/tld/thumbnailTag.tld"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="thumbnail" uri="/WEB-INF/tld/thumbnailTag.tld" %>
 
 <!DOCTYPE html>
 <html lang="zh">
@@ -17,9 +17,12 @@
 
 </head>
 <body>
+<div class="topbar topnavibar" style="background-color:#fafafa;">
 
+</div>
 <div :class="topbar_class" id="topbar">
-    <img :src="left_pic_directory" class="topbarbutton" onclick="window.location.href='<%=request.getContextPath()%>/product/productList?showFilter=1'">
+    <img :src="left_pic_directory" class="topbarbutton"
+         onclick="window.location.href='<%=request.getContextPath()%>/product/productList?showFilter=1'">
     <div class="middlebox">
         <img :src="search_directory" class="search_img">
         <input type="text" class="search_input" placeholder="输入产品名" v-model="keyword">
@@ -35,14 +38,14 @@
         el: '#topbar',
         data: {
             topbar_class: "topbar",
-            left_pic_directory: "<%=request.getContextPath()%>/resources/customer/assets/images/search_bar/class_white.png",
-            right_pic_directory: "<%=request.getContextPath()%>/resources/customer/assets/images/search_bar/cs_white.png",
+            left_pic_directory: "<%=request.getContextPath()%>/resources/customer/assets/images/search_bar/menu.png",
+            right_pic_directory: "<%=request.getContextPath()%>/resources/customer/assets/images/search_bar/cs.png",
             search_directory: "<%=request.getContextPath()%>/resources/customer/assets/images/search_bar/search_black.png",
             keyword: ""
         },
         methods: {
             search: function () {
-            	window.location.href="<%=request.getContextPath()%>/product/productList?keyword="+this.keyword;
+                window.location.href = "<%=request.getContextPath()%>/product/productList?keyword=" + this.keyword;
             }
         }
     })
@@ -69,13 +72,13 @@
 
 <div class="swiper-container" id="swiperbox">
     <div class="swiper-wrapper">
-    	<c:forEach items="${carouselList}" var="carousel">	
-     	<c:if test="${!empty carousel.carouselPic}">
-	        <a class="swiper-slide" href="${carousel.carouselLink}">
-	            <img class="swiper_img" src="${carousel.carouselPic}">
-	        </a>
-	    </c:if>
-	    </c:forEach>
+        <c:forEach items="${carouselList}" var="carousel">
+            <c:if test="${!empty carousel.carouselPic}">
+                <a class="swiper-slide" href="${carousel.carouselLink}">
+                    <img class="swiper_img" src="${carousel.carouselPic}">
+                </a>
+            </c:if>
+        </c:forEach>
     </div>
     <div class="swiper-pagination"></div>
 </div>
@@ -84,8 +87,8 @@
 
     var deviceWidth = window.screen.width;
     var swiper = document.getElementById('swiperbox');
-    swiper.style.height = deviceWidth * 5 / 9 + 'px';
-    document.getElementsByClassName('swiper-wrapper')[0].style.lineHeight = deviceWidth * 5 / 9 + 'px';
+    swiper.style.height = deviceWidth * 450 / 1080 + 'px';
+    document.getElementsByClassName('swiper-wrapper')[0].style.lineHeight = deviceWidth * 450 / 1080 + 'px';
 
     var swiper = new Swiper('.swiper-container', {
         loop: true,
@@ -127,13 +130,17 @@
             </td>
             <td>
                 <a href="<%=request.getContextPath()%>/product/productList?type=185">
-                    <div class="lightblockimg"><img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-ceiling.png"></div>
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-ceiling.png">
+                    </div>
                     <div class="lightblockspan"><span>吸顶灯</span></div>
                 </a>
             </td>
             <td>
                 <a href="<%=request.getContextPath()%>/product/productList?type=181">
-                    <div class="lightblockimg"><img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-wall.png"></div>
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-wall.png">
+                    </div>
                     <div class="lightblockspan"><span>壁灯</span></div>
                 </a>
             </td>
@@ -150,10 +157,10 @@
             <td>
                 <a href="<%=request.getContextPath()%>/product/productList?type=659">
                     <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-auxiliary.png">
+                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-floorlamp.png">
                     </div>
                     <div class="lightblockspan">
-                        <span>辅灯</span>
+                        <span>落地灯</span>
                     </div>
                 </a>
             </td>
@@ -165,7 +172,7 @@
                         <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-cupric.png">
                     </div>
                     <div class="lightblockspan">
-                        <span>铜灯</span>
+                        <span>全铜</span>
                     </div>
                 </a>
             </td>
@@ -180,16 +187,6 @@
                 </a>
             </td>
             <td>
-                <a href="<%=request.getContextPath()%>/product/productList?material=203">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-wooden.png">
-                    </div>
-                    <div class="lightblockspan">
-                        <span>木艺</span>
-                    </div>
-                </a>
-            </td>
-            <td>
                 <a href="<%=request.getContextPath()%>/product/productList?material=193">
                     <div class="lightblockimg">
                         <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-zincic.png">
@@ -200,9 +197,19 @@
                 </a>
             </td>
             <td>
+                <a href="<%=request.getContextPath()%>/product/productList?material=203">
+                    <div class="lightblockimg">
+                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-wooden.png">
+                    </div>
+                    <div class="lightblockspan">
+                        <span>木艺</span>
+                    </div>
+                </a>
+            </td>
+            <td>
                 <a href="<%=request.getContextPath()%>/product/productList">
                     <div class="lightblockimg">
-                        <img style="max-width: 50%; max-height: 50%;" src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-more.png">
+                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-more.png">
                     </div>
                     <div class="lightblockspan">
                         <span>更多</span>
@@ -226,21 +233,24 @@
 <div class="block">
     <div class="blocktitle">———— 热销排行榜 ————</div>
     <div style="width: 100%;white-space: nowrap; overflow-x: auto; overflow-y: hidden;">
-    	<c:forEach items="${hotProductList}" var="product">
-	        <div class="goods" gid="${product.productId }" onclick="goodsDetails(this.getAttribute('gid'))">
-	            <div class="hotsalepicture"><img class='hotsale_img' src='<thumbnail:date value="${product.cover1 }"/>'></div>
-	            <div class='hotsaletitle'>${product.productName }</div>
-	            <div class='hotsaledetail'>${product.productCode }</div>
-	            <div class='hotsaleprice'>
-	                ¥${product.retailPrice }
-	                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/cart.png" class="addtocart_img"
-	                     onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'), this)">
-	            </div>
-	        </div>
+        <c:forEach items="${hotProductList}" var="product">
+            <div class="goods" gid="${product.productId }" onclick="goodsDetails(this.getAttribute('gid'))">
+                <div class="hotsalepicture"><img class='hotsale_img' src='<thumbnail:date value="${product.cover1 }"/>'>
+                </div>
+                <div class='hotsaletitle'>${product.productName }</div>
+                <div class='hotsaledetail'>${product.productCode }</div>
+                <div class='hotsaleprice'>
+                    ¥${product.retailPrice }
+                    <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/cart.png"
+                         class="addtocart_img"
+                         onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'), this)">
+                </div>
+            </div>
         </c:forEach>
         <div id="morehotsale">
             <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList?orderBy=0'">
-                <img style="width: 2rem; height: 2rem; vertical-align: middle;" src="<%=request.getContextPath()%>/resources/customer/assets/images/hot_sale/hotsale.png">
+                <img style="width: 2rem; height: 2rem; vertical-align: middle;"
+                     src="<%=request.getContextPath()%>/resources/customer/assets/images/hot_sale/hotsale.png">
                 <span style="vertical-align: middle;">发现更多</span>
             </div>
         </div>
@@ -261,8 +271,8 @@
     function goodsDetails(id) {
         /*跳转到详情页*/
         //window.location.href = "" + object.getAttribute('gid');
-    	window.location.href = "<%=request.getContextPath()%>/product/productDetail?productId=" + id;
-        
+        window.location.href = "<%=request.getContextPath()%>/product/productDetail?productId=" + id;
+
     }
 
     function getGoodsInfo(goodsId) {
@@ -272,8 +282,8 @@
 
         /* ajax  请求数据 */
 
-		$("footer").hide();
-		changeProduct(goodsId);
+        $("footer").hide();
+        changeProduct(goodsId);
     }
 
     function addGoodsToCart(goodsId, e) {
@@ -290,12 +300,13 @@
 
 <div class="block">
     <div class="blocktitle">
-        ———— 精挑细选 ————
+        ———— 人气商品 ————
         <div>
-        	<c:forEach items="${spreadProductList }" var="product">
-            <div class="narrowbox">
-                <img onclick="goodsDetails(${product.productId})" class="full_img" src="${product.cover1 }">
-            </div>
+            <div class="wid"></div>
+            <c:forEach items="${spreadProductList }" var="product">
+                <div class="narrowbox">
+                    <img onclick="goodsDetails(${product.productId})" class="full_img" src="${product.cover1 }">
+                </div>
             </c:forEach>
         </div>
     </div>
@@ -324,7 +335,8 @@
         <div class='hotsaledetail'>{{item.details}}</div>
         <div class='hotsaleprice'>
             ¥{{item.price}}
-            <img onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'))" src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/cart.png"
+            <img onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'))"
+                 src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/cart.png"
                  class="addtocart_img">
         </div>
     </div>
@@ -340,9 +352,7 @@
     var mayLike = new Vue({
         el: '#maylike',
         data: {
-            items: [
-               
-            ]
+            items: []
         }
     });
 
@@ -410,7 +420,8 @@
     <div style="height: 15%"></div>
     <div class="a2c_details">
         <span class="waiting_span">正在加载……</span>
-        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/cart/close.png" alt="关闭" class="closecart" onclick="closeCart()">
+        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/cart/close.png" alt="关闭"
+             class="closecart" onclick="closeCart()">
     </div>
 </div>
 
@@ -454,7 +465,8 @@
             </table>
             <div class="a2c_right" onclick="confirmToAdd()">加入购物车</div>
         </div>
-        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/cart/close.png" alt="关闭" class="closecart" onclick="closeCart()">
+        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/cart/close.png" alt="关闭"
+             class="closecart" onclick="closeCart()">
     </div>
 </div>
 <jsp:include page="/jsp/buyer/footer.jsp"></jsp:include>
@@ -503,13 +515,11 @@
             model: "Subaru BRZ",
             price: "666",
             saleNumber: '1688',
-            picture:'',
+            picture: '',
             selections: [
                 {
                     title: '规格',
-                    option: [
-                        
-                    ],
+                    option: [],
                 }
             ]
         },
@@ -525,137 +535,149 @@
     })
 
     function confirmToAdd() {
-    	addShopcart();
+        addShopcart();
     }
-    
 
-    var canLoad=true;
-	var noDate=false;var offset=0;
-	var wiwH=$(window).height();
-	var load=$(".loading");
-	loadProduct();
+
+    var canLoad = true;
+    var noDate = false;
+    var offset = 0;
+    var wiwH = $(window).height();
+    var load = $(".loading");
+    loadProduct();
+
     /*加载产品*/
-	function loadProduct(){
-		var url="";
-		var params;
-	
-		if(sessionStorage.getItem("pageNo")>0){
-			url="<%=request.getContextPath()%>/buyer/indexProductBatch";
-			params={offset:sessionStorage.getItem("pageNo")};
-			sessionStorage.removeItem("pageNo");
-			doAjax("GET",url,params,function(data){loadProductSuccess(data);
-				document.body.scrollTop=sessionStorage.getItem("scrollTop");
-			},fail,true,false);
-		}else{
-			url="<%=request.getContextPath()%>/buyer/indexProduct";
-			params={offset:offset};
-			doAjax("GET",url,params,loadProductSuccess,fail,true,false);
-			sessionStorage.removeItem("scrollTop");
-		}
-	}
-	
-	function loadProductBatch(pageNo){
-		var url = $("#path").val()+"/buyer/indexProductBatch";
-		var params={offset:pageNo,style:styleId}
-		doAjax("GET",url,params,function(data){loadProductSuccess(data);
-			},fail,true,false);
-	}
-	
-	var percent=$("#percent").val();
-	function loadProductSuccess(data){
-		var productList = data.list;
-		var html="";
-		var i;
-		for(i=0;i<productList.length;i++){
-			mayLike.items.push({
+    function loadProduct() {
+        var url = "";
+        var params;
+
+        if (sessionStorage.getItem("pageNo") > 0) {
+            url = "<%=request.getContextPath()%>/buyer/indexProductBatch";
+            params = {offset: sessionStorage.getItem("pageNo")};
+            sessionStorage.removeItem("pageNo");
+            doAjax("GET", url, params, function (data) {
+                loadProductSuccess(data);
+                document.body.scrollTop = sessionStorage.getItem("scrollTop");
+            }, fail, true, false);
+        } else {
+            url = "<%=request.getContextPath()%>/buyer/indexProduct";
+            params = {offset: offset};
+            doAjax("GET", url, params, loadProductSuccess, fail, true, false);
+            sessionStorage.removeItem("scrollTop");
+        }
+    }
+
+    function loadProductBatch(pageNo) {
+        var url = $("#path").val() + "/buyer/indexProductBatch";
+        var params = {offset: pageNo, style: styleId}
+        doAjax("GET", url, params, function (data) {
+            loadProductSuccess(data);
+        }, fail, true, false);
+    }
+
+    var percent = $("#percent").val();
+
+    function loadProductSuccess(data) {
+        var productList = data.list;
+        var html = "";
+        var i;
+        for (i = 0; i < productList.length; i++) {
+            mayLike.items.push({
                 id: productList[i].productId,
                 picDir: changePath(productList[i].cover1),
                 title: productList[i].productName,
                 details: productList[i].productCode,
                 price: productList[i].retailPrice
             });
-		}
-		
-		if((parseInt(offset)+10)>=data.count){
-			noDate=true;
-		}
-		if(i>9&&i>=data.count){
-			noDate=true;
-		}
-		offset=data.after;
-		canLoad=true;
-	}
-	
-	function fail(data){
-		console.log("fail");
-	}
-	
-	function changePath(path){
-		var i=path.lastIndexOf("/");
-		return path.substring(0,i+1)+"thumbnailImage/"+path.substring(i+1);
-	}
-	
-	 $(document).scroll(function(){
-		 if(load.offset().top - $(window).scrollTop()<wiwH){
-			load.css("visibility","visible");
-			if(canLoad&&!noDate){
-				load.css("visibility","visible");
-				canLoad=false;
-				loadProduct();
-			}
-			if(noDate){
-				load.find(".blocktitle").html("<a href='"+$("#path").val()+"/product/productList'>点击查看更多产品</a>");
-				load.css("visibility","visible");
-			}
-		}
-     });
-	 
-	//切换产品
-	var productId;
-    function changeProduct(productId){
-		var url="<%=request.getContextPath()%>/product/getProductAjax";
-		var params={productId:productId};
-		doAjax("GET",url,params,changeSuccess,fail,true,false);
-	}
+        }
 
-	var percent="${percent}";
-	function changeSuccess(data){
-		var product = data.data;
-		if(percent!=""){
-			product.product.unitPrice=(product.product.unitPrice+Math.ceil(product.product.unitPrice*parseFloat(percent))).toFixed(2);
-		}
-		
-		addToCart.title=product.product.productName;
-		addToCart.model=product.product.productCode;
-		addToCart.price=product.product.retailPrice;
-		addToCart.saleNumber=product.product.productSales;
-		addToCart.picture=changePath(product.product.cover1);
-		
-		addToCart.selections[0].option=[];
-		for(var i=0;i<product.seriesProductList.length;i++){
-			addToCart.selections[0].option.push(
-					{id:product.seriesProductList[i].productId,name: product.seriesProductList[i].productName, 
-					option_selected: product.seriesProductList[i].productId==product.product.productId});
-		}
-		var waiting_div = document.getElementById('addtocart_waiting');
-	    var addToCart_div = document.getElementById('addtocart');
-	 	addToCart_div.hidden = false;
-        waiting_div.hidden = true;
-		
-		productId=product.product.productId;
-
-	}
-	
-	//加入购物车
-    function addShopcart(){
-    	var url = "<%=request.getContextPath()%>/shopcart/addShopcart";
-		var params = {productId: productId,num:$("#number_input").val()};
-		doAjax("GET", url, params, addShopcartSuccess, 
-				function(data){console.log(data);console.log("加入购物车失败");}, true, false);
+        if ((parseInt(offset) + 10) >= data.count) {
+            noDate = true;
+        }
+        if (i > 9 && i >= data.count) {
+            noDate = true;
+        }
+        offset = data.after;
+        canLoad = true;
     }
-    
+
+    function fail(data) {
+        console.log("fail");
+    }
+
+    function changePath(path) {
+        var i = path.lastIndexOf("/");
+        return path.substring(0, i + 1) + "thumbnailImage/" + path.substring(i + 1);
+    }
+
+    $(document).scroll(function () {
+        if (load.offset().top - $(window).scrollTop() < wiwH) {
+            load.css("visibility", "visible");
+            if (canLoad && !noDate) {
+                load.css("visibility", "visible");
+                canLoad = false;
+                loadProduct();
+            }
+            if (noDate) {
+                load.find(".blocktitle").html("<a href='" + $("#path").val() + "/product/productList'>点击查看更多产品</a>");
+                load.css("visibility", "visible");
+            }
+        }
+    });
+
+    //切换产品
+    var productId;
+
+    function changeProduct(productId) {
+        var url = "<%=request.getContextPath()%>/product/getProductAjax";
+        var params = {productId: productId};
+        doAjax("GET", url, params, changeSuccess, fail, true, false);
+    }
+
+    var percent = "${percent}";
+
+    function changeSuccess(data) {
+        var product = data.data;
+        if (percent != "") {
+            product.product.unitPrice = (product.product.unitPrice + Math.ceil(product.product.unitPrice * parseFloat(percent))).toFixed(2);
+        }
+
+        addToCart.title = product.product.productName;
+        addToCart.model = product.product.productCode;
+        addToCart.price = product.product.retailPrice;
+        addToCart.saleNumber = product.product.productSales;
+        addToCart.picture = changePath(product.product.cover1);
+
+        addToCart.selections[0].option = [];
+        for (var i = 0; i < product.seriesProductList.length; i++) {
+            addToCart.selections[0].option.push(
+                {
+                    id: product.seriesProductList[i].productId, name: product.seriesProductList[i].productName,
+                    option_selected: product.seriesProductList[i].productId == product.product.productId
+                });
+        }
+        var waiting_div = document.getElementById('addtocart_waiting');
+        var addToCart_div = document.getElementById('addtocart');
+        addToCart_div.hidden = false;
+        waiting_div.hidden = true;
+
+        productId = product.product.productId;
+
+    }
+
+    //加入购物车
+    function addShopcart() {
+        var url = "<%=request.getContextPath()%>/shopcart/addShopcart";
+        var params = {productId: productId, num: $("#number_input").val()};
+        doAjax("GET", url, params, addShopcartSuccess,
+            function (data) {
+                console.log(data);
+                console.log("加入购物车失败");
+            }, true, false);
+    }
+
     //加入购物车成功
-    function addShopcartSuccess(data){ 
+    function addShopcartSuccess(data) {
         alert("添加成功！");
         closeCart();
     }

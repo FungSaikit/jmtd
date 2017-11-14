@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-		<title>客户列表</title>
+		<title>金明同达灯饰</title>
 		<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/customer/font/iconfont.css">
 		<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/customer/assets/css/chat.css?11">
 	</head>
