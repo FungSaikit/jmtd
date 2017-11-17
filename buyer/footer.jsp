@@ -72,6 +72,10 @@
         width: 33.33%;
         float: left;
     }
+
+    footer {
+        border-top: 1px solid lightgrey;
+    }
 </style>
 <script src="<%=request.getContextPath() %>/resources/common/zepto.min.js"></script>
 <script src="<%=request.getContextPath() %>/resources/common/touch.js"></script>

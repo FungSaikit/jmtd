@@ -13,6 +13,7 @@
     <title>金明同达灯饰</title>
     <script type="text/javascript" src="<%=request.getContextPath()%>/resources/customer/assets/js/vue.js"></script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/resources/common/swiper-3.4.2.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/resources/common/zepto.min.js"></script>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/customer/assets/css/fung.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/customer/assets/css/swiper-3.4.2.min.css">
     <style type="text/css">
@@ -377,6 +378,10 @@
             white-space: nowrap;
         }
 
+        .modelselect {
+            margin-top: 0.5rem;
+        }
+
     </style>
 </head>
 <body>
@@ -435,15 +440,14 @@
         <div class="modelselect">
             <div>
                 产品规格：
-                <div id="seeprice" style="float: right;" onclick="seePrice()">+</div>
-                <div id="hiddenprice" style="float: right; color: #f38200; font-size: 0.8rem" onclick="hidePrice()"
-                     hidden>
-                    <del style="color: #000;">原价:9999.9</del>
-                    活动价:9999.0
-                </div>
+                <c:if test="${(buyer.role==2||buyer.role==4)&&buyer.checkStatus==3}">
+                    <div id="seeprice" style="float: right;" onclick="seePrice()">+</div>
+                    <div id="hiddenprice" style="float: right; color: #f38200; font-size: 0.8rem" onclick="hidePrice()" hidden><c:if test="${!empty product.product.costPrice }"><del style="color: #000;">原价:${product.product.costPrice }</del> 活动价:</c:if>${product.product.unitPrice}</div>
+                </c:if>
             </div>
-            <div class="option option_selected">型号1</div>
-            <div class="option">型号2</div>
+            <c:forEach items="${seriesList }" var="seriesProduct">
+                <div data-id="${seriesProduct.productId}" class="option ${seriesProduct.productId==product.product.productId?'option_selected':'' }">${seriesProduct.productCode }</div>
+            </c:forEach>
         </div>
     </div>
 </div>
@@ -479,11 +483,21 @@
         autoplayDisableOnInteraction: false
     });
 
+    $(".option").click(function(){
+        changeProduct($(this).attr("data-id"));
+        $(".option").removeClass("option_selected");
+        $(".option[data-id='"+$(this).attr("data-id")+"']").addClass("option_selected");
+    });
+
 </script>
 
 <script type="text/javascript">
 
-    var topBar = new Vue({
+    var body = document.getElementsByTagName('body')[0];
+    var page1 = document.getElementById("page1");
+    var page2 = document.getElementById("page2");
+    var fontSize = parseInt(window.getComputedStyle(document.documentElement)["fontSize"]);
+    var topBarVue = new Vue({
         el: '#topbar',
         data: {
             selected: [
@@ -494,34 +508,36 @@
         },
         methods: {
             selectThis: function (num) {
-                for (var i = 0; i < this.selected.length; i++) {
-                    this.selected[i] = (num == i);
-                }
+                this.selected = [
+                    0 == num,
+                    1 == num,
+                    2 == num
+                ];
+
                 switch (num) {
                     case 0:
-                        window.location.href = '#jumppage1';
+                        document.body.scrollTop = document.documentElement.scrollTop = 0;
                         break;
                     case 1:
-                        window.location.href = '#jumppage2';
+                        document.body.scrollTop = document.documentElement.scrollTop = page1.offsetHeight + 0.5 * fontSize;
                         break;
                     case 2:
-                        window.location.href = '#jumppage3';
+                        document.body.scrollTop = document.documentElement.scrollTop = page1.offsetHeight + page2.offsetHeight + fontSize;
                         break;
                     default:
                         break;
-                }
-                this.selected.push(0);
-                this.selected.pop();
+                };
+
             }
         }
     });
 
 </script>
 
-<div class="uppull" id="jumppage2">
+<%--<div class="uppull" id="jumppage2">
     <img class="pull_img" src="<%=request.getContextPath()%>/resources/customer/assets/images/details/pull.png" alt="">
     <span>上拉查看产品参数</span>
-</div>
+</div>--%>
 
 <div class="block" id="page2">
     <h1 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px lightgray solid;">产品参数</h1>
@@ -571,10 +587,12 @@
     </table>
 </div>
 
+<%--
 <div class="uppull" id="jumppage3">
     <img class="pull_img" src="<%=request.getContextPath()%>/resources/customer/assets/images/details/pull.png" alt="">
     <span>上拉查看图文详情</span>
 </div>
+--%>
 
 <div class="block" id="page3">
     <h1 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px lightgray solid;">图文详情</h1>
@@ -658,22 +676,13 @@
         if (typeof oldOnscroll == 'function') {
             oldOnscroll();
         }
-
-
-        if (swiperBox.offsetTop + winWidth - window.scrollY > 0) {
-            /*topBar.selected.splice(0, 0, true);
-            topBar.selected.splice(0, 0, false);
-            topBar.selected.splice(2, 0, false);*/
-            topBar.selected = [true, false, false];
-        } else if (page2Table.offsetTop + winWidth - window.scrollY > 0) {
-            /*topBar.selected.splice(0, 0, false);
-            topBar.selected.splice(0, 0, true);
-            topBar.selected.splice(2, 0, false);*/
-            topBar.selected = [false, true, false];
-
+        var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (scrollTop < page1.offsetHeight) {
+            topBarVue.selected = [true, false, false];
+        } else if (scrollTop >= page1.offsetHeight && scrollTop < page1.offsetHeight + page2.offsetHeight + 0.5 * fontSize) {
+            topBarVue.selected = [false, true, false];
         } else {
-            topBar.selected = [false, false, true];
-
+            topBarVue.selected = [false, false, true];
         }
     }
 

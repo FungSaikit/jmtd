@@ -1,6 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="thumbnail" uri="/WEB-INF/tld/thumbnailTag.tld" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!DOCTYPE html>
 <html lang="zh">
@@ -17,9 +18,116 @@
 
 </head>
 <body>
-<div class="topbar topnavibar" style="background-color:#fafafa;">
-
+<div id="topnavibar">
+    <div class="topbar topnavibar" style="background-color:#fafafa;">
+        <div :class="{hidden: detailsIsShow}">
+            <div class="topnavibar_class"
+                 onclick="window.location.href='<%=request.getContextPath()%>/product/productList?showFilter=0'">
+                今日推荐
+            </div>
+            <div class="topnavibar_class"
+                 onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=215;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+                客厅灯
+            </div>
+            <div class="topnavibar_class"
+                 onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=226;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+                餐吊灯
+            </div>
+            <div class="topnavibar_class"
+                 onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=214;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+                卧室灯
+            </div>
+            <div class="topnavibar_class"
+                 onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=225;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+                楼梯灯
+            </div>
+            <div class="topnavibar_class"
+                 onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=180;&styleId=&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+                鸟笼灯
+            </div>
+            <div class="topnavibar_class"
+                 onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=180;&styleId=&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+                风扇灯
+            </div>
+            <div class="topnavibar_class"
+                 onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=223;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+                户外灯
+            </div>
+            <div class="topnavibar_class">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+        </div>
+        <div :class="{hidden: !detailsIsShow}" style="color: gray; margin-left: 0.5rem;">
+            请选择
+        </div>
+        <div class="show_topnavi_details" v-if="!detailsIsShow" @click="showOrHideDetails()"><img
+                src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/show.png"></div>
+        <div class="show_topnavi_details" v-if="detailsIsShow" @click="showOrHideDetails()"><img
+                src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/hide.png"></div>
+    </div>
+    <div class="topnavidetails" :class="{hidden: !detailsIsShow} ">
+        <div class="topnavidetails_class"
+             onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=215;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <div>
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/0.png">
+            </div>
+            <span>客厅灯</span>
+        </div>
+        <div class="topnavidetails_class"
+             onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=226;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <div>
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/1.png">
+            </div>
+            <span>餐吊灯</span>
+        </div>
+        <div class="topnavidetails_class"
+             onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=214;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <div>
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/2.png">
+            </div>
+            <span>卧室灯</span>
+        </div>
+        <div class="topnavidetails_class"
+             onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=225;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <div>
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/3.png">
+            </div>
+            <span>楼梯灯</span>
+        </div>
+        <div class="topnavidetails_class"
+             onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=180;&styleId=&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <div>
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/4.png">
+            </div>
+            <span>鸟笼灯</span>
+        </div>
+        <div class="topnavidetails_class"
+             onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=180;&styleId=&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <div>
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/5.png">
+            </div>
+            <span>风扇灯</span>
+        </div>
+        <div class="topnavidetails_class"
+             onclick="window.location.href='<%=request.getContextPath()%>/product/productList?typeId=&styleId=223;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <div>
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/6.png">
+            </div>
+            <span>户外灯</span>
+        </div>
+    </div>
 </div>
+<script type="text/javascript">
+    var topNaviBar = new Vue({
+        el: "#topnavibar",
+        data: {
+            detailsIsShow: false
+        },
+        methods: {
+            showOrHideDetails: function () {
+                this.detailsIsShow = !this.detailsIsShow;
+            }
+        }
+    })
+</script>
 <div :class="topbar_class" id="topbar">
     <img :src="left_pic_directory" class="topbarbutton"
          onclick="window.location.href='<%=request.getContextPath()%>/product/productList?showFilter=1'">
@@ -104,7 +212,7 @@
     <table style="border-collapse: collapse;height: 2rem;">
         <tr>
             <td><span class="hotlinetitle">灯饰头条</span></td>
-            <td><a href="#" class="hotlinecomment">热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开热烈祝贺中共十九大召开</a>
+            <td><a href="#" class="hotlinecomment">热烈庆祝金明同达灯饰微信商城正式上线！</a>
             </td>
         </tr>
     </table>
@@ -231,6 +339,116 @@
 </script>
 
 <div class="block">
+    <div class="blocktitle">
+        ———— 空间精选 ————
+    </div>
+    <div class="flex">
+        <div class="recommend_in2"
+             onclick="window.location.href = '<%=request.getContextPath()%>/product/productList?typeId=&styleId=215;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <img class="recommend_pic"
+                 src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/space0.jpg">
+        </div>
+        <div class="recommend_in2"
+             onclick="window.location.href = '<%=request.getContextPath()%>/product/productList?typeId=&styleId=214;217;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <img class="recommend_pic"
+                 src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/space1.jpg">
+        </div>
+    </div>
+    <div class="flex">
+        <div class="recommend_in2"
+             onclick="window.location.href = '<%=request.getContextPath()%>/product/productList?typeId=&styleId=226;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <img class="recommend_pic"
+                 src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/space2.jpg">
+        </div>
+        <div class="recommend_in4"
+             onclick="window.location.href = '<%=request.getContextPath()%>/product/productList?typeId=&styleId=214;217;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/space3.jpg">
+        </div>
+        <div class="recommend_in4" style="margin-left: 0.5%;"
+             onclick="window.location.href = '<%=request.getContextPath()%>/product/productList?typeId=&styleId=218;&spaceId=&materialId=&keyword=&fromPrice=&toPrice='">
+            <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/space4.jpg">
+        </div>
+    </div>
+</div>
+
+<div class="block">
+    <div class="blocktitle">
+        ———— 风格精选 ————
+    </div>
+    <div class="flex" style="height: 15rem;">
+        <div class="styleblock1 style_item">
+            <div style="width: auto; margin-top: 10%">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style0.png"
+                     class="style_img">
+            </div>
+            <div class="styleblock_title">现代简约</div>
+            <div class="styleblock_content">精致优雅 品味生活</div>
+        </div>
+        <div class="styleblock2">
+            <div class="style_item" style="height: 50%;">
+                <div class="flex" style="height: 80%; width: 100%;">
+                    <div style="height: 100%; line-height: 2rem;text-align: center; width: 4rem;">
+                        <div style="height: 30%;"></div>
+                        <div class="styleblock_title">欧式</div>
+                    </div>
+                    <div style="flex-grow: 1; text-align: right; margin-top: 5%; width: 1rem; flex-grow: 1; text-align: center;">
+                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style1.png"
+                             class="style_img">
+                    </div>
+                </div>
+                <div class="styleblock_content" style="height: 20%;">高端典雅 晶莹剔透</div>
+            </div>
+            <div class="flex flex-grow">
+                <div class="style_item flex-grow flex-column" style="text-align: center; width: 1rem;">
+                    <div class="styleblock_title" style="margin-top: 0.5rem;">美式</div>
+                    <div class="styleblock_content">精致优雅 品味生活</div>
+                    <div class="flex-grow">
+                        <img style="max-width: 60%" src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style2.png" class="style_img">
+                    </div>
+                </div>
+                <div class="style_item flex-grow flex-column" style="text-align: center; width: 1rem;">
+                    <div class="styleblock_title" style="margin-top: 0.5rem;">中式</div>
+                    <div class="styleblock_content">传世经典 韵成于心</div>
+                    <div class="flex-grow">
+                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style3.png" class="style_img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex styleblock3">
+        <div class="style_item flex-grow flex-column" style="width: 1rem;">
+            <div class="styleblock_title" style="margin-top: 0.5rem;">艺术个性</div>
+            <div class="styleblock_content">传世经典 韵成于心</div>
+            <div class="flex-grow style_img_placeholder">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style4.png" class="style_img">
+            </div>
+        </div>
+        <div class="style_item flex-grow flex-column" style="width: 1rem;">
+            <div class="styleblock_title" style="margin-top: 0.5rem;">儿童卡通</div>
+            <div class="styleblock_content">传世经典 韵成于心</div>
+            <div class="flex-grow style_img_placeholder">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style5.png" class="style_img">
+            </div>
+        </div>
+        <div class="style_item flex-grow flex-column" style="width: 1rem;">
+            <div class="styleblock_title" style="margin-top: 0.5rem;">法式</div>
+            <div class="styleblock_content">传世经典 韵成于心</div>
+            <div class="flex-grow style_img_placeholder">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style6.png" class="style_img">
+            </div>
+        </div>
+        <div class="style_item flex-grow flex-column" style="width: 1rem;">
+            <div class="styleblock_title" style="margin-top: 0.5rem;">田园</div>
+            <div class="styleblock_content">传世经典 韵成于心</div>
+            <div class="flex-grow style_img_placeholder">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style7.png" class="style_img">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block">
     <div class="blocktitle">———— 热销排行榜 ————</div>
     <div style="width: 100%;white-space: nowrap; overflow-x: auto; overflow-y: hidden;">
         <c:forEach items="${hotProductList}" var="product">
@@ -240,7 +458,8 @@
                 <div class='hotsaletitle'>${product.productName }</div>
                 <div class='hotsaledetail'>${product.productCode }</div>
                 <div class='hotsaleprice'>
-                    ¥${product.retailPrice }
+                    ¥<fmt:formatNumber groupingUsed="false" type="number" value="${product.retailPrice }"
+                                       maxFractionDigits="0"/>
                     <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/cart.png"
                          class="addtocart_img"
                          onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'), this)">
@@ -301,14 +520,14 @@
 <div class="block">
     <div class="blocktitle">
         ———— 人气商品 ————
-        <div>
-            <div class="wid"></div>
-            <c:forEach items="${spreadProductList }" var="product">
-                <div class="narrowbox">
-                    <img onclick="goodsDetails(${product.productId})" class="full_img" src="${product.cover1 }">
-                </div>
-            </c:forEach>
-        </div>
+    </div>
+    <div>
+        <%--<div class="wid"></div>--%>
+        <c:forEach items="${spreadProductList }" var="product">
+            <div class="narrowbox">
+                <img onclick="goodsDetails(${product.productId})" class="full_img" src="${product.cover1 }">
+            </div>
+        </c:forEach>
     </div>
 </div>
 <script type="text/javascript">
@@ -321,7 +540,6 @@
     for (var i = 0; i < narrowBoxs.length; i++) {
         narrowBoxs[i].style.height = 0.3 * deviceWidth + 'px';
     }
-
 </script>
 
 <div class="block" id="maylike">

@@ -166,7 +166,7 @@
             top: 0;
             left: 0;
             background-color: #eee;
-            z-index: 11;
+            z-index: 10000;
         }
 
         .bottom {
@@ -771,6 +771,9 @@
     </div>
 
 </div>
+
+<jsp:include
+        page="/jsp/buyer/footer.jsp"></jsp:include>
 
 <script type="text/javascript">
 	var searchInput = document.getElementById("keyword");
