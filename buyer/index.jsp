@@ -128,9 +128,12 @@
         }
     })
 </script>
+
+<div style="height: 2.5rem;"></div>
+
 <div :class="topbar_class" id="topbar">
     <img :src="left_pic_directory" class="topbarbutton"
-         onclick="window.location.href='<%=request.getContextPath()%>/product/productList'">
+         onclick="showLeftBar()">
     <div class="middlebox">
         <img :src="search_directory" class="search_img">
         <input type="text" class="search_input" placeholder="输入产品名" v-model="keyword">
@@ -173,7 +176,6 @@
         } else {
             topBar.topbar_style = "background-color: rgba(255, 255, 255, 0.9)";
         }
-
     }*/
 
 </script>
@@ -208,135 +210,100 @@
 
 </script>
 
-<div class="hotline">
-    <table style="border-collapse: collapse;height: 2rem;">
-        <tr>
-            <td><span class="hotlinetitle">灯饰头条</span></td>
-            <td><a href="#" class="hotlinecomment">热烈庆祝金明同达灯饰微信商城正式上线！</a>
-            </td>
-        </tr>
-    </table>
+<div class="hotline flex">
+    <div class="hotlinetitle">灯饰头条</div>
+    <div class="hotlinecomment flex-grow">热烈庆祝金明同达灯饰微信商城正式上线！</div>
 </div>
-<script type="text/javascript">
-
-    document.getElementsByClassName('hotlinecomment')[0].style.width = deviceWidth - document.getElementsByClassName("hotlinetitle")[0].parentNode.clientWidth + 'px';
-
-</script>
 
 <div class="lightblock">
-    <table>
-        <tr>
-            <td>
-                <a href="<%=request.getContextPath()%>/product/productList?type=180">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-pendant.png">
-                    </div>
-                    <div class="lightblockspan">
-                        <span>吊灯</span>
-                    </div>
-                </a>
-            </td>
-            <td>
-                <a href="<%=request.getContextPath()%>/product/productList?type=185">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-ceiling.png">
-                    </div>
-                    <div class="lightblockspan"><span>吸顶灯</span></div>
-                </a>
-            </td>
-            <td>
-                <a href="<%=request.getContextPath()%>/product/productList?type=181">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-wall.png">
-                    </div>
-                    <div class="lightblockspan"><span>壁灯</span></div>
-                </a>
-            </td>
-            <td>
-                <a href="#">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-tablelamp.png">
-                    </div>
-                    <div class="lightblockspan">
-                        <span>台灯</span>
-                    </div>
-                </a>
-            </td>
-            <td>
-                <a href="<%=request.getContextPath()%>/product/productList?type=659">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-floorlamp.png">
-                    </div>
-                    <div class="lightblockspan">
-                        <span>落地灯</span>
-                    </div>
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <a href="<%=request.getContextPath()%>/product/productList?material=190">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-cupric.png">
-                    </div>
-                    <div class="lightblockspan">
-                        <span>全铜</span>
-                    </div>
-                </a>
-            </td>
-            <td>
-                <a href="<%=request.getContextPath()%>/product/productList?material=206">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-ferric.png">
-                    </div>
-                    <div class="lightblockspan">
-                        <span>铁艺</span>
-                    </div>
-                </a>
-            </td>
-            <td>
-                <a href="<%=request.getContextPath()%>/product/productList?material=193">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-zincic.png">
-                    </div>
-                    <div class="lightblockspan">
-                        <span>锌合金</span>
-                    </div>
-                </a>
-            </td>
-            <td>
-                <a href="<%=request.getContextPath()%>/product/productList?material=203">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-wooden.png">
-                    </div>
-                    <div class="lightblockspan">
-                        <span>木艺</span>
-                    </div>
-                </a>
-            </td>
-            <td>
-                <a href="<%=request.getContextPath()%>/product/productList">
-                    <div class="lightblockimg">
-                        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-more.png">
-                    </div>
-                    <div class="lightblockspan">
-                        <span>更多</span>
-                    </div>
-                </a>
-            </td>
-        </tr>
-    </table>
+    <div class="lightblock_line">
+        <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList?type=180'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-pendant.png">
+            </div>
+            <div class="lightblockspan">
+                <span>吊灯</span>
+            </div>
+        </div>
+        <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList?type=185'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-ceiling.png">
+            </div>
+            <div class="lightblockspan"><span>吸顶灯</span></div>
+        </div>
+
+        <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList?type=181'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-wall.png">
+            </div>
+            <div class="lightblockspan"><span>壁灯</span></div>
+        </div>
+
+        <div onclick="window.location.href='#'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-tablelamp.png">
+            </div>
+            <div class="lightblockspan">
+                <span>台灯</span>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList?type=659'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/0-floorlamp.png">
+            </div>
+            <div class="lightblockspan">
+                <span>落地灯</span>
+            </div>
+        </div>
+    </div>
+    <div class="lightblock_line">
+        <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList?material=190'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-cupric.png">
+            </div>
+            <div class="lightblockspan">
+                <span>全铜</span>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList?material=206'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-ferric.png">
+            </div>
+            <div class="lightblockspan">
+                <span>铁艺</span>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList?material=193'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-zincic.png">
+            </div>
+            <div class="lightblockspan">
+                <span>锌合金</span>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList?material=203'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-wooden.png">
+            </div>
+            <div class="lightblockspan">
+                <span>木艺</span>
+            </div>
+        </div>
+
+        <div onclick="window.location.href='<%=request.getContextPath()%>/product/productList'">
+            <div class="lightblockimg">
+                <img src="<%=request.getContextPath()%>/resources/customer/assets/images/light/1-more.png">
+            </div>
+            <div class="lightblockspan">
+                <span>更多</span>
+            </div>
+        </div>
+    </div>
 </div>
-
-<script type="text/javascript">
-
-    var imgBox = document.getElementsByClassName('lightblockimg');
-    for (var i = 0; i < imgBox.length; i++) {
-        imgBox[i].style.height = imgBox[i].offsetWidth + "px";
-        imgBox[i].style.lineHeight = imgBox[i].offsetWidth + "px";
-    }
-
-</script>
 
 <div class="block">
     <div class="blocktitle">
@@ -500,7 +467,8 @@
     <div style="width: 100%;white-space: nowrap; overflow-x: auto; overflow-y: hidden;">
         <c:forEach items="${hotProductList}" var="product">
             <div class="goods" gid="${product.productId }" onclick="goodsDetails(this.getAttribute('gid'))">
-                <div class="hotsalepicture"><img class='hotsale_img' src='<thumbnail:date value="${product.cover1 }"/>'>
+                <div class="hotsalepicture"><img class='hotsale_img'
+                                                 src='<thumbnail:date value="${product.cover1 }"/>'>
                 </div>
                 <div class='hotsaletitle'>${product.productName }</div>
                 <div class='hotsaledetail'>${product.productCode }</div>
@@ -937,504 +905,560 @@
 </script>
 
 <%--左侧边栏--%>
+<div class="leftbar_bg" onclick="showLeftBar()" hidden></div>
+    <div class="leftbar" onclick="event.stopPropagation()" hidden>
+        <div class="leftbar_recommend">
+            <div>
+                <div class="leftbar_recommend_left">新</div>
+                新品推荐
+            </div>
+            <div>
+                <div class="leftbar_recommend_left">热</div>
+                热卖推荐
+            </div>
+            <div>
+                <div class="leftbar_recommend_left">工</div>
+                工程款推荐
+            </div>
+            <div>
+                <div class="leftbar_recommend_left">套</div>
+                套餐搭配
+            </div>
+        </div>
+        <div class="leftbar_block">
+            <div class="leftbar_block_title">
+                类型
+            </div>
+            <div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-0.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">吊灯</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-1.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">吸顶灯</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-2.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">台灯</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-3.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">落地灯</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-4.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">壁灯</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-5.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">镜前灯</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-6.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">户外灯</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-7.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">过道灯</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-8.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">蜡烛灯</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-9.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">辅灯</div>
+                </div>
+            </div>
+        </div>
+        <div class="leftbar_block">
+            <div class="leftbar_block_title">空间</div>
+            <div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-0.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">卧室</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-1.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">客厅</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-2.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">餐厅</div>
 
-<div class="leftbar">
-    <div class="leftbar_recommend">
-        <div>
-            <div class="leftbar_recommend_left">新</div>
-            新品推荐
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-3.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">厨房</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-4.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">儿童房</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-5.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">楼梯/拐角</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-6.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">玄关/过道</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-7.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">户外</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-8.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">高层</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-9.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">低户型</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-10.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">视听室</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-11.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">衣帽间</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-12.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">阳台</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-13.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">卫浴间</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-14.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">书房</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-15.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">棋牌室</div>
+                </div>
+            </div>
         </div>
-        <div>
-            <div class="leftbar_recommend_left">热</div>
-            热卖推荐
+        <div class="leftbar_block">
+            <div class="leftbar_block_title">风格</div>
+            <div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-0.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">简约欧式</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-1.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">古典欧式</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-2.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">新概念</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-3.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">现代简约</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-4.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">美式田园</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-5.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">日式</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-6.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">简约美式</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-7.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">后奢华</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-8.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">古典美式</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-9.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">工业风</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-10.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">法式田园</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-11.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">法式宫廷</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-12.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">儿童护眼</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-13.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">东南亚</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-14.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">蒂凡尼</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-15.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">地中海</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-16.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">北欧简约</div>
+                </div>
+            </div>
         </div>
-        <div>
-            <div class="leftbar_recommend_left">工</div>
-            工程款推荐
+        <div class="leftbar_block">
+            <div class="leftbar_block_title">材质</div>
+            <div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-0.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">铜艺</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-1.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">铁艺</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-2.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">锌合金</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-3.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">玉石</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-4.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">仿羊皮</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-5.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">亚克力</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-6.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">云石</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-7.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">竹</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-8.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">陶瓷</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-9.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">塑料</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-10.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">水泥</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-11.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">水晶</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-12.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">树脂</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-13.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">木艺</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-14.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">铝材</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-15.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">仿玉石</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-16.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">布艺</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-17.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">不锈钢</div>
+                </div>
+                <div class="leftbar_block_item">
+                    <div class="leftbar_block_item_imgblock">
+                        <img class="leftbar_block_item_img"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-18.png">
+                    </div>
+                    <div class="leftbar_block_itemtitle">玻璃</div>
+                </div>
+            </div>
         </div>
-        <div>
-            <div class="leftbar_recommend_left">套</div>
-            套餐搭配
+        <div class="leftbar_block">
+            <div class="leftbar_block_title">价格</div>
+            <div>
+                <div class="leftbar_price_div">500元以下</div>
+                <div class="leftbar_price_div">500-1000元</div>
+                <div class="leftbar_price_div">1000-2000元</div>
+                <div class="leftbar_price_div">2000-4000元</div>
+                <div class="leftbar_price_div">4000-6000元</div>
+                <div class="leftbar_price_div">6000-8000元</div>
+                <div class="leftbar_price_div">8000-10000元</div>
+                <div class="leftbar_price_div">10000元以上</div>
+                <div class="leftbar_price_div" style="width: 97%; margin-top: 1rem;">自定义价格</div>
+                <input type="text" class="leftbar_price_div" placeholder="最低价(元)">
+                <input type="text" class="leftbar_price_div" placeholder="最高价(元)">
+                <div class="leftbar_price_div" style="width: 27%; color: #5f6678;">重置</div>
+                <div class="leftbar_price_div" style="width: 67%; background-color: #8c9093;">确定</div>
+            </div>
+            <br>
         </div>
-    </div>
-    <div class="leftbar_block">
-        <div class="leftbar_block_title">
-            类型
-        </div>
-        <div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-0.png">
-                </div>
-                <div class="leftbar_block_itemtitle">吊灯</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-1.png">
-                </div>
-                <div class="leftbar_block_itemtitle">吸顶灯</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-2.png">
-                </div>
-                <div class="leftbar_block_itemtitle">台灯</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-3.png">
-                </div>
-                <div class="leftbar_block_itemtitle">落地灯</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-4.png">
-                </div>
-                <div class="leftbar_block_itemtitle">壁灯</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-5.png">
-                </div>
-                <div class="leftbar_block_itemtitle">镜前灯</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-6.png">
-                </div>
-                <div class="leftbar_block_itemtitle">户外灯</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-7.png">
-                </div>
-                <div class="leftbar_block_itemtitle">过道灯</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-8.png">
-                </div>
-                <div class="leftbar_block_itemtitle">蜡烛灯</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/0-9.png">
-                </div>
-                <div class="leftbar_block_itemtitle">辅灯</div>
-            </div>
-        </div>
-    </div>
-    <div class="leftbar_block">
-        <div class="leftbar_block_title">空间</div>
-        <div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-0.png">
-                </div>
-                <div class="leftbar_block_itemtitle">卧室</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-1.png">
-                </div>
-                <div class="leftbar_block_itemtitle">客厅</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-2.png">
-                </div>
-                <div class="leftbar_block_itemtitle">餐厅</div>
+        <br>
 
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-3.png">
-                </div>
-                <div class="leftbar_block_itemtitle">厨房</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-4.png">
-                </div>
-                <div class="leftbar_block_itemtitle">儿童房</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-5.png">
-                </div>
-                <div class="leftbar_block_itemtitle">楼梯/拐角</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-6.png">
-                </div>
-                <div class="leftbar_block_itemtitle">玄关/过道</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-7.png">
-                </div>
-                <div class="leftbar_block_itemtitle">户外</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-8.png">
-                </div>
-                <div class="leftbar_block_itemtitle">高层</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-9.png">
-                </div>
-                <div class="leftbar_block_itemtitle">低户型</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-10.png">
-                </div>
-                <div class="leftbar_block_itemtitle">视听室</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-11.png">
-                </div>
-                <div class="leftbar_block_itemtitle">衣帽间</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-12.png">
-                </div>
-                <div class="leftbar_block_itemtitle">阳台</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-13.png">
-                </div>
-                <div class="leftbar_block_itemtitle">卫浴间</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-14.png">
-                </div>
-                <div class="leftbar_block_itemtitle">书房</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/1-15.png">
-                </div>
-                <div class="leftbar_block_itemtitle">棋牌室</div>
-            </div>
-        </div>
-    </div>
-    <div class="leftbar_block">
-        <div class="leftbar_block_title">风格</div>
-        <div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-0.png">
-                </div>
-                <div class="leftbar_block_itemtitle">简约欧式</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-1.png">
-                </div>
-                <div class="leftbar_block_itemtitle">古典欧式</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-2.png">
-                </div>
-                <div class="leftbar_block_itemtitle">新概念</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-3.png">
-                </div>
-                <div class="leftbar_block_itemtitle">现代简约</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-4.png">
-                </div>
-                <div class="leftbar_block_itemtitle">美式田园</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-5.png">
-                </div>
-                <div class="leftbar_block_itemtitle">日式</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-6.png">
-                </div>
-                <div class="leftbar_block_itemtitle">简约美式</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-7.png">
-                </div>
-                <div class="leftbar_block_itemtitle">后奢华</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-8.png">
-                </div>
-                <div class="leftbar_block_itemtitle">古典美式</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-9.png">
-                </div>
-                <div class="leftbar_block_itemtitle">工业风</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-10.png">
-                </div>
-                <div class="leftbar_block_itemtitle">法式田园</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-11.png">
-                </div>
-                <div class="leftbar_block_itemtitle">法式宫廷</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-12.png">
-                </div>
-                <div class="leftbar_block_itemtitle">儿童护眼</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-13.png">
-                </div>
-                <div class="leftbar_block_itemtitle">东南亚</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-14.png">
-                </div>
-                <div class="leftbar_block_itemtitle">蒂凡尼</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-15.png">
-                </div>
-                <div class="leftbar_block_itemtitle">地中海</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/2-16.png">
-                </div>
-                <div class="leftbar_block_itemtitle">北欧简约</div>
-            </div>
-        </div>
-    </div>
-    <div class="leftbar_block">
-        <div class="leftbar_block_title">材质</div>
-        <div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-0.png">
-                </div>
-                <div class="leftbar_block_itemtitle">铜艺</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-1.png">
-                </div>
-                <div class="leftbar_block_itemtitle">铁艺</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-2.png">
-                </div>
-                <div class="leftbar_block_itemtitle">锌合金</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-3.png">
-                </div>
-                <div class="leftbar_block_itemtitle">玉石</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-4.png">
-                </div>
-                <div class="leftbar_block_itemtitle">仿羊皮</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-5.png">
-                </div>
-                <div class="leftbar_block_itemtitle">亚克力</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-6.png">
-                </div>
-                <div class="leftbar_block_itemtitle">云石</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-7.png">
-                </div>
-                <div class="leftbar_block_itemtitle">竹</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-8.png">
-                </div>
-                <div class="leftbar_block_itemtitle">陶瓷</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-9.png">
-                </div>
-                <div class="leftbar_block_itemtitle">塑料</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-10.png">
-                </div>
-                <div class="leftbar_block_itemtitle">水泥</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-11.png">
-                </div>
-                <div class="leftbar_block_itemtitle">水晶</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-12.png">
-                </div>
-                <div class="leftbar_block_itemtitle">树脂</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-13.png">
-                </div>
-                <div class="leftbar_block_itemtitle">木艺</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-14.png">
-                </div>
-                <div class="leftbar_block_itemtitle">铝材</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-15.png">
-                </div>
-                <div class="leftbar_block_itemtitle">仿玉石</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-16.png">
-                </div>
-                <div class="leftbar_block_itemtitle">布艺</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-17.png">
-                </div>
-                <div class="leftbar_block_itemtitle">不锈钢</div>
-            </div>
-            <div class="leftbar_block_item">
-                <div class="leftbar_block_item_imgblock">
-                    <img class="leftbar_block_item_img"
-                         src="<%=request.getContextPath()%>/resources/customer/assets/images/left_bar/3-18.png">
-                </div>
-                <div class="leftbar_block_itemtitle">玻璃</div>
-            </div>
-        </div>
-    </div>
-    <div class="leftbar_block">
-        <div class="leftbar_block_title">价格</div>
-        <div>
-            <div class="leftbar_price_div">500元以下</div>
-            <div class="leftbar_price_div">500-1000元</div>
-            <div class="leftbar_price_div">1000-2000元</div>
-            <div class="leftbar_price_div">2000-4000元</div>
-            <div class="leftbar_price_div">4000-6000元</div>
-            <div class="leftbar_price_div">6000-8000元</div>
-            <div class="leftbar_price_div">8000-10000元</div>
-            <div class="leftbar_price_div">10000元以上</div>
-            <div class="leftbar_price_div" style="width: 97%; margin-top: 1rem;">自定义价格</div>
-            <input type="text" class="leftbar_price_div" placeholder="最低价(元)">
-            <input type="text" class="leftbar_price_div" placeholder="最高价(元)">
-            <div class="leftbar_price_div" style="width: 27%; color: #5f6678;">重置</div>
-            <div class="leftbar_price_div" style="width: 67%; background-color: #8c9093;">确定</div>
-        </div>
-    </div>
 </div>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/common/zepto.min.js"></script>
+<script type="text/javascript">
+
+    var fontSize = window.getComputedStyle(document.documentElement)["fontSize"];
+    var winHeight, winWidth;
+    if (window.innerHeight)
+        winHeight = window.innerHeight;
+    else if ((document.body) && (document.body.clientHeight))
+        winHeight = document.body.clientHeight;
+    if (window.innerWidth)
+        winWidth = window.innerWidth;
+    else if ((document.body) && (document.body.clientWidth))
+        winWidth = document.body.clientWidth;
+    var leftBarInner = document.getElementsByClassName("leftbar")[0];
+    //leftBarInner.style.height = winHeight + "px";
+    var leftBar = document.getElementsByClassName("leftbar_bg")[0];
+    var topBar = document.getElementById("topbar");
+    var lightBlock = document.getElementsByClassName("lightblock")[0];
+    var swiperBlock = document.getElementById("swiperbox");
+    var allBlock = document.getElementsByClassName("block");
+    topBar.style.width = winWidth + "px";
+    lightBlock.style.width = winWidth + "px";
+    swiperBlock.style.width = winWidth + "px";
+    for (var i = 0; i < allBlock.length; i++) {
+        allBlock[i].style.width = winWidth - 0.4 * parseInt(fontSize) + "px";
+        console.log(winWidth - 0.2 * parseInt(fontSize));
+    }
+
+    function showLeftBar() {
+        if (leftBar.hidden) {
+            leftBarInner.hidden = false;
+            body.style.overflow = "hidden";
+            body.style.position = "fixed";
+            leftBarInner.style.animation = "showLeftBar 0.5s";
+            var timeout = setTimeout(function () {
+                leftBar.hidden = false;
+            }, 500);
+        } else {
+            leftBar.hidden = true;
+            leftBarInner.style.animation = "hideLeftBar 0.5s";
+            var timeout = setTimeout(function () {
+                leftBarInner.hidden = true;
+                body.style.overflow = "auto";
+                body.style.position = "";
+                clearTimeout(timeout);
+            }, 500);
+
+        }
+    }
+
+
+</script>
 
 <%--左侧边栏--%>
+
 
 </body>
 

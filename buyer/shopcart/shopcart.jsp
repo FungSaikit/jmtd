@@ -130,7 +130,7 @@
         <span>正在结算，请稍等</span>
     </div>
 </div>
-
+<jsp:include page="/jsp/buyer/footer.jsp"></jsp:include>
 <script src="<%=request.getContextPath() %>/resources/common/zepto.min.js"></script>
 <script src="<%=request.getContextPath() %>/resources/interactive.js"></script>
 <jsp:include page="/jsp/buyer/waiting.jsp"></jsp:include>

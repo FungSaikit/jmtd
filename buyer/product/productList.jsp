@@ -109,8 +109,9 @@
             display: inline-block;
             width: 47%;
             float: left;
-            margin-top: 0.2rem;
+            margin-top: 0.5rem;
             margin-left: 2%;
+            border-radius: 0.2rem;
         }
 
         .hotsale_img {
@@ -119,6 +120,7 @@
             max-width: 100%;
             max-height: 100%;
             vertical-align: middle;
+            border-radius: 0.2rem;
         }
 
         .hotsalepicture {
@@ -166,7 +168,7 @@
             top: 0;
             left: 0;
             background-color: #eee;
-            z-index: 10000;
+            z-index: 1000;
         }
 
         .bottom {
@@ -278,9 +280,10 @@
             line-height: 3rem;
             text-align: center;
             position: fixed;
-            bottom: 0;
+            bottom: 3rem;
             left: 0;
             background-color: #fff;
+            z-index:10000;
         }
 
         .bottom_button {
@@ -309,8 +312,7 @@
     <img class="topbar_img" src="<%=request.getContextPath()%>/resources/customer/assets/images/details/cart.png" alt="购物车">
 </div>-->
 <div class="topbar" id="topbar">
-    <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/back.png" class="topbarbutton" onclick="window.location.href='<%=request.getContextPath()%>/buyer/index'">
-    <div class="middlebox" onclick="displayClassification()">
+    <%--<img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/back.png" class="topbarbutton" onclick="window.location.href='<%=request.getContextPath()%>/buyer/index'">--%>    <div class="middlebox" onclick="displayClassification()">
         <img src="<%=request.getContextPath()%>/resources/customer/assets/images/search_bar/search_black.png" class="search_img">
         <div class="search_input"><span
                 style="font-size: 0.8rem; color: ${empty productParam.keyword?'lightgray':'dimgray'}; vertical-align: top; line-height: 1.2rem">${empty productParam.keyword?'输入产品名':productParam.keyword}</span>
