@@ -5,7 +5,7 @@
 <%@ taglib prefix="ppt" uri="/WEB-INF/tld/productPriceTag.tld"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
@@ -133,21 +133,18 @@
 <jsp:include page="/jsp/buyer/footer.jsp"></jsp:include>
 <script src="<%=request.getContextPath() %>/resources/common/zepto.min.js"></script>
 <script src="<%=request.getContextPath() %>/resources/interactive.js"></script>
-<jsp:include page="/jsp/buyer/waiting.jsp"></jsp:include>
+
 </body>
 
 <script type="text/javascript">
 
     var deleteArray;
-
-    var body = document.getElementsByTagName("body")[0];
     var goodsCheckbox = document.getElementsByClassName('check_goods');
     var selectAllButton = document.getElementsByClassName("select_all_checkbox")[0];
     var deleteAllButton = document.getElementsByClassName("select_all_checkbox")[1];
     var changeModeButton = document.getElementById("changeMode");
     var payMenu = document.getElementById("pay_menu");
     var editMenu = document.getElementById("edit_menu");
-    var payWait = document.getElementsByClassName("pay_wait")[0];
 
     window.onload = function () {
         getPrice();
