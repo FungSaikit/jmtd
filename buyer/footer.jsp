@@ -129,8 +129,8 @@
 </footer>
 <!--底部]]-->
 <!-- 等待加载 -->
-<div class="waiting"><i class="iconfont">&#xe605;</i></div>
-<div class="shade"></div>
+<%--<div class="waiting"><i class="iconfont">&#xe605;</i></div>
+<div class="shade"></div>--%>
 <!-- 等待加载 -->
 
 <script>
