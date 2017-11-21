@@ -25,7 +25,7 @@
 <c:set var="RETAIL_SALES" value="<%=UserType.RETAIL_SALES%>" /> 
 <c:set var="AUTHENTICATION_SUCCESS" value="<%=UserCheckStatus.AUTHENTICATION_SUCCESS%>" />
 <div class="topbar">
-    <a href="javascript:history.go(-1);"><img class="topbar_left" src="<%=request.getContextPath() %>/resources/customer/assets/images/top_bar/back_white.png" alt="返回"></a>
+    <span class="topbar_left">&nbsp&nbsp&nbsp&nbsp</span>
     <span class="topbar_middle">购物车</span>
     <a href="#" onclick="editMode()" id="changeMode"><span class="topbar_right">编辑</span></a>
 </div>

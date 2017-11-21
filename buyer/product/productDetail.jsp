@@ -159,7 +159,6 @@
 
         #page3 {
             margin-top: 0.5rem;
-            padding: 1rem
         }
 
         .bottomBar {
@@ -540,7 +539,7 @@
 </div>--%>
 
 <div class="block" id="page2">
-    <h1 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px lightgray solid;">产品参数</h1>
+    <h1 style="display: block; font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px lightgray solid;">产品参数</h1>
     <table class="detailstable" id="detailstable">
         <tr>
             <th class="detailstitle">产品规格：</th>
@@ -595,7 +594,7 @@
 --%>
 
 <div class="block" id="page3">
-    <h1 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px lightgray solid;">图文详情</h1>
+    <h1 style="font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px lightgray solid; padding: 1rem 1rem 0 1rem;">图文详情</h1>
     <div style="font-size: 0;">
         <c:if test="${!empty product.product.descriptionPic1 }"><img src="${product.product.descriptionPic1 }"
                                                                      style="width:100%;height:100%;"/></c:if>

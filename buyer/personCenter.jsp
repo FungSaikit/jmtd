@@ -20,10 +20,10 @@
         .blocktitle {
             text-align: left;
             font-size: 1.2rem;
+            height: 2rem;
+            line-height: 2rem;
             color: #29a2f5;
-            padding: 0.3rem;
-            vertical-align: middle;
-            margin-bottom: 0;
+            margin: 0.5rem 0.5rem 0 0.5rem;
         }
 
         .block_box {
@@ -103,12 +103,8 @@
 <div class="m_menu">
 
     <img class="background" src="<%=request.getContextPath()%>/resources/customer/assets/images/personal_center/pc_bg.jpg">
-
-    <div class="navibar" style="background: none;">
-        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/back_white.png" class="topbar_button prevPage">
-        <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/setting_white.png" style="float: right;" class="topbar_button"
-             onclick="showPersonalSetting()">
-    </div>
+    <img src="<%=request.getContextPath()%>/resources/customer/assets/images/top_bar/setting_white.png" style="float: right;" class="topbar_button"
+         onclick="showPersonalSetting()">
     <img class="usericon" src="${user.userProtraitPic }" alt="">
     <div class="username">${user.userNickname }</div>
     <!-- <div class="user_menu">
@@ -357,6 +353,7 @@
     <div class="placeholder"></div>
 
 </div>
+<div class="placeholder"></div>
 <jsp:include page="/jsp/buyer/footer.jsp"></jsp:include>
 <script type="text/javascript">
 	$(".myOrder .corner_number").each(function(){

@@ -441,7 +441,7 @@
     <div class="flex styleblock3">
         <div class="style_item flex-grow flex-column" style="width: 1rem;">
             <div class="styleblock_title" style="margin-top: 0.5rem;">艺术个性</div>
-            <div class="styleblock_content">传世经典 韵成于心</div>
+            <div class="styleblock_content">点亮你的生活</div>
             <div class="flex-grow style_img_placeholder">
                 <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style4.png"
                      class="style_img">
@@ -449,7 +449,7 @@
         </div>
         <div class="style_item flex-grow flex-column" style="width: 1rem;">
             <div class="styleblock_title" style="margin-top: 0.5rem;">儿童卡通</div>
-            <div class="styleblock_content">传世经典 韵成于心</div>
+            <div class="styleblock_content">童趣·纯真童年</div>
             <div class="flex-grow style_img_placeholder">
                 <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style5.png"
                      class="style_img">
@@ -457,7 +457,7 @@
         </div>
         <div class="style_item flex-grow flex-column" style="width: 1rem;">
             <div class="styleblock_title" style="margin-top: 0.5rem;">法式</div>
-            <div class="styleblock_content">传世经典 韵成于心</div>
+            <div class="styleblock_content">传承品质 铸就经典</div>
             <div class="flex-grow style_img_placeholder">
                 <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style6.png"
                      class="style_img">
@@ -465,7 +465,7 @@
         </div>
         <div class="style_item flex-grow flex-column" style="width: 1rem;">
             <div class="styleblock_title" style="margin-top: 0.5rem;">田园</div>
-            <div class="styleblock_content">传世经典 韵成于心</div>
+            <div class="styleblock_content">浪漫温馨 品味生活</div>
             <div class="flex-grow style_img_placeholder">
                 <img src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/style7.png"
                      class="style_img">
@@ -474,7 +474,7 @@
     </div>
 </div>
 
-<div class="block">
+<div class="block" style="overflow: hidden;">
     <div class="blocktitle">
         <div class="flex-grow"></div>
         <div class="br_line"></div>
@@ -482,7 +482,7 @@
         <div class="br_line"></div>
         <div class="flex-grow"></div>
     </div>
-    <div style="width: 100%;white-space: nowrap; overflow-x: auto; overflow-y: hidden;">
+    <%--<div style="width: 100%;white-space: nowrap; overflow-x: auto; overflow-y: hidden;">
         <c:forEach items="${hotProductList}" var="product">
             <div class="goods" gid="${product.productId }" onclick="goodsDetails(this.getAttribute('gid'))">
                 <div class="hotsalepicture"><img class='hotsale_img'
@@ -506,25 +506,68 @@
                 <span style="vertical-align: middle;">发现更多</span>
             </div>
         </div>
+    </div>--%><%--这里是滑动列表的代码--%>
+    <div class="couponswiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide flex">
+                <div class="goods_in3">
+                    <div class="hotsalepicture"><img class='hotsale_img' src='http://lanmao.zhuanlitou.com:8080/findeng/picture/product/thumbnailImage/15063927864480.jpg'></div>
+                    <div class='hotsaletitle'>灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯</div>
+                    <div class='hotsaledetail'>规格: 哈哈哈哈哈哈哈哈哈哈</div>
+                    <div class='hotsaleprice'>
+                        ¥ 100
+                        <img onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'))"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/cart.png"
+                             class="addtocart_img">
+                    </div>
+                </div>
+                <div class="goods_in3">
+                    <div class="hotsalepicture"><img class='hotsale_img' src='http://lanmao.zhuanlitou.com:8080/findeng/picture/product/thumbnailImage/15063927864480.jpg'></div>
+                    <div class='hotsaletitle'>灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯</div>
+                    <div class='hotsaledetail'>规格: 哈哈哈哈哈哈哈哈哈哈</div>
+                    <div class='hotsaleprice'>
+                        ¥ 100
+                        <img onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'))"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/cart.png"
+                             class="addtocart_img">
+                    </div>
+                </div>
+                <div class="goods_in3">
+                    <div class="hotsalepicture"><img class='hotsale_img' src='http://lanmao.zhuanlitou.com:8080/findeng/picture/product/thumbnailImage/15063927864480.jpg'></div>
+                    <div class='hotsaletitle'>灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯灯</div>
+                    <div class='hotsaledetail'>规格: 哈哈哈哈哈哈哈哈哈哈</div>
+                    <div class='hotsaleprice'>
+                        ¥ 100
+                        <img onclick="addGoodsToCart(this.parentNode.parentNode.getAttribute('gid'))"
+                             src="<%=request.getContextPath()%>/resources/customer/assets/images/recommend/cart.png"
+                             class="addtocart_img">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script type="text/javascript">
 
-    var pic = document.getElementsByClassName('hotsalepicture');
-    var moreHotSale = document.getElementById('morehotsale');
+    var goodSwiper = new Swiper('.couponswiper-container', {
+        loop: true,
+        autoplay: 3000,
+        autoplayDisableOnInteraction: false
+    });
 
+    /*var pic = document.getElementsByClassName('hotsalepicture');
+    var moreHotSale = document.getElementById('morehotsale');
     for (var i = 0; i < pic.length; i++) {
         pic[i].style.height = pic[i].clientWidth + 'px';
         pic[i].style.lineHeight = pic[i].clientWidth + 'px';
     }
     moreHotSale.style.height = document.getElementsByClassName('goods')[0].offsetHeight + 'px';
-    moreHotSale.style.lineHeight = document.getElementsByClassName('goods')[0].offsetHeight + 'px';
+    moreHotSale.style.lineHeight = document.getElementsByClassName('goods')[0].offsetHeight + 'px';*/
 
     function goodsDetails(id) {
         /*跳转到详情页*/
         //window.location.href = "" + object.getAttribute('gid');
         window.location.href = "<%=request.getContextPath()%>/product/productDetail?productId=" + id;
-
     }
 
     function getGoodsInfo(goodsId) {
@@ -1457,7 +1500,6 @@
     swiperBlock.style.width = winWidth + "px";
     for (var i = 0; i < allBlock.length; i++) {
         allBlock[i].style.width = winWidth - 0.4 * parseInt(fontSize) + "px";
-        console.log(winWidth - 0.2 * parseInt(fontSize));
     }
 
     function showLeftBar() {
